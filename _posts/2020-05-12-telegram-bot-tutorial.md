@@ -8,8 +8,6 @@ tags:
 ---
 
 
-# Telegram bot tutorial using python and flask
-
 ![img](https://www.wikitechy.com/technology/wp-content/uploads/2017/05/Telegram-Bots.png)
 
 [img source](https://www.wikitechy.com/technology/wp-content/uploads/2017/05/Telegram-Bots.png)
@@ -25,7 +23,8 @@ you will need to have the following
 
 ## Create the bot on telegram first
 
-![bot-creating-in-telegram](../assets/images/telegram-bot-tutorial/createbot.png)
+![bot-creating-in-telegram]({{ site.url }}{{ site.baseurl }}/assets/images/telegram-bot-tutorial/createbot.png)
+
 
 before we dive into coding, let's finish the easy stuff, we need to ask telegram to create a new bot on the platform, it's a fairly simple process, you can do so in your telegram app(on [windows/linux/android/ios/web](https://telegram.org/apps)) you need to go to [botfather](https://telegram.me/botfather) which is basically a bot himself that automate the process of creating your bot.
 
@@ -218,7 +217,7 @@ we need a couple of things before we make our app.
 
 * from your [dashboard](https://dashboard.heroku.com/apps) on heroku create a new app, once you create an app it will direct you to the deploy page, open the **settings** tab in new window and copy the domain of the app which will be something like `https://appname.herokuapp.com/` and paste it in the URL variable inside our `credentials.py`
 
-![project-url](../assets/images/telegram-bot-tutorial/heroku-url.png)
+![project-url]({{ site.url }}{{ site.baseurl }}/assets/images/telegram-bot-tutorial/heroku-url.png)
 
 now go back to the **deploy** tab and proceed with the steps:
   * login to heroku
@@ -262,7 +261,7 @@ now go back to the **deploy** tab and proceed with the steps:
 
 ## Now go talk to your bot
 
-![live bot](../assets/images/telegram-bot-tutorial/bot.gif)
+![live bot]({{ site.url }}{{ site.baseurl }}/assets/images/telegram-bot-tutorial/bot.gif)
 
 ## The complete source code
 
