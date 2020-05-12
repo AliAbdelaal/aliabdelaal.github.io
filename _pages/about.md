@@ -3,9 +3,9 @@ permalink: /about/
 title: "About"
 ---
 
-Welcome to technical blog 👋!
+Welcome to my technical blog 👋!
 
-I write about python development, machine learning and natural language processing, in a application focused way to help deliver a working project rather than just the theory.
+I write about python development, machine learning and natural language processing, in an application focused way to help deliver a working project rather than just the theory.
 
 I have other technical blogs that you can also check 🤓
 
