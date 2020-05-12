@@ -66,6 +66,12 @@ author:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/aliabdelaal"
+    - label: "LinkedIn"
+      icon: "fab fa-linkedin"
+      url: "https://www.linkedin.com/in/aliabdelaal/"
+    - label: "Email"
+      icon: fas fa-envelope-open"
+      url: "mailto:aliabdelaal3690@gmail.com"
 
 footer:
   links:

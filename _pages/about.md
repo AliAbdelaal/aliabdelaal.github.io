@@ -3,10 +3,14 @@ permalink: /about/
 title: "About"
 ---
 
-Ali has built multiple natural language processing systems that are powered by artificial intelligence. He has hands-on experience in many machine learning tools such as sklearn, TensorFlow, and kears in addition to a variety of Python libraries including Pandas, Numpy, and Nltk. While a bachelor's degree in computer engineering enables a deeper understanding, he prefers creativity and problem-solving techniques when approaching any given task.
+Welcome to technical blog 👋!
 
-<ul class="about-info"> 
-    <li> <i class="fa fa-linkedin"></i> <a href="https://eg.linkedin.com/in/aliabdelaal/" target="_blank"> Check out my Linkedin.</a> </li> 
-    <li> <i class="fa fa-twitter"></i> <a href="https://twitter.com/3b3aal_ali" target="_blank"> Follow me on twitter,</a> </li>
-    <li> <i class="fa fa-envelope-o"></i> <a href="mailto:aliabdelaal3690@gmail.com" target="_blank"> or send me an email.</a> </li> 
-</ul>
+I write about python development, machine learning and natural language processing, in a application focused way to help deliver a working project rather than just the theory.
+
+I have other technical blogs that you can also check 🤓
+
++ [Autoencoders for Image Reconstruction in Python and Keras](https://stackabuse.com/autoencoders-for-image-reconstruction-in-python-and-keras/)
++ [Deploying a Flask Application to Heroku](https://stackabuse.com/deploying-a-flask-application-to-heroku/)
++ [Building Your First Telegram Bot: A Step by Step Guide](https://www.toptal.com/python/telegram-bot-tutorial-python)
+
+Would be more than happy to have a chat, let's contact via [email](aliabdelaal369@gmail.com) or connect with my on [linkedIn](https://www.linkedin.com/in/aliabdelaal/)
