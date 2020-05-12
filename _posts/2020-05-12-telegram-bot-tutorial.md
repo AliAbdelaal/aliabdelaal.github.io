@@ -6,6 +6,7 @@ tags:
   - python
   - chatbot
 toc: true
+toc_sticky: false
 ---
 
 
