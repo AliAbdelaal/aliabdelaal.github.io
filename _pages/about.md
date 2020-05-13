@@ -13,4 +13,4 @@ I have other technical blogs that you can also check 🤓
 + [Deploying a Flask Application to Heroku](https://stackabuse.com/deploying-a-flask-application-to-heroku/)
 + [Building Your First Telegram Bot: A Step by Step Guide](https://www.toptal.com/python/telegram-bot-tutorial-python)
 
-Would be more than happy to have a chat, let's contact via [email](aliabdelaal369@gmail.com) or connect with my on [linkedIn](https://www.linkedin.com/in/aliabdelaal/)
+Would be more than happy to have a chat, let's contact via [email](aliabdelaal369@gmail.com) or connect with me on [linkedIn](https://www.linkedin.com/in/aliabdelaal/)
