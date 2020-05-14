@@ -1,5 +1,5 @@
 ---
-title: "مقدمة في تعلم الآلة machine learning"
+title: "مقدمة في تعلم الآلة"
 categories:
   - Blog
 tags:
@@ -8,10 +8,8 @@ toc: true
 toc_sticky: true
 ---
 
-<div dir="rtl">
+<div class='.notice' dir="rtl">
+<center>بسم الله الرحمن الرحيم</center>
 
-في هذا المقال سنتعرض لتعلم الآلة (machine learning) بشئ من التبسيط 
-
-لنرى كيف سيكون شكل هذ النص
-
+في هذا المقال البسيط سوف نتعرض بشئ من التفصيل عن ماهية تعليم الآلة او (machine learning)، ما المقصود بها تحديدا و كيف تتعلم الآلة و ما علاقة الرياضيات بذلك
 </div>
