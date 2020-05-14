@@ -5,3 +5,4 @@ Gemfile.lock
 .bundle
 vendor
 template_posts
+.render.sh

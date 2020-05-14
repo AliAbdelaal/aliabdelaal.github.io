@@ -1,12 +1,16 @@
 ---
 title: "Telegram bot tutorial using python and flask"
+excerpt: in this tutorial you will learn how to make a telegram bot and deploy it on a heroku server, the bot will be up 24-7.
 categories:
   - Blog
 tags:
   - python
   - chatbot
+header:
+  teaser: https://www.wikitechy.com/technology/wp-content/uploads/2017/05/Telegram-Bots.png
 toc: true
 toc_sticky: true
+breadcrumbs: true
 ---
 
 

@@ -94,6 +94,7 @@ defaults:
       share: true
       toc: true
       toc_sticky: true
+      related: true
   # _pages
   - scope:
       path: "_pages"
@@ -115,3 +116,5 @@ comments:
     appid: # optional
     num_posts: # 5 (default)
     colorscheme: # "light" (default), "dark"
+
+google_site_verification: "SB7EBK1J2IC4oNTmK8HHhFbkw9-m759bj5AAsdqCtkY"
