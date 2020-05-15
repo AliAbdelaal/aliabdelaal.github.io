@@ -118,3 +118,7 @@ comments:
     colorscheme: # "light" (default), "dark"
 
 google_site_verification: "SB7EBK1J2IC4oNTmK8HHhFbkw9-m759bj5AAsdqCtkY"
+
+head_scripts:
+  - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML
+  
