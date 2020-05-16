@@ -6,3 +6,4 @@ Gemfile.lock
 vendor
 template_posts
 .render.sh
+_playground/
