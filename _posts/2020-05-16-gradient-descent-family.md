@@ -100,7 +100,7 @@ $$w_t = w_{t-1} - \eta \frac{\partial }{\partial w}E(w)$$
 ## قيمة التفاضل قد تخدعك في بعض الأحيان
 {: .text-right}
 
-![oscillation](https://lh3.googleusercontent.com/proxy/YacUJIHaV5B9IjyaxadENCJ_bUAIcis5wodxiKnopjdL306FVbt7STrhjilLbJ3JPplgTfxWeaxBFlFncV_o-39uUGWQJSeUgv-Bo0Gv6DSOzH7RLk3r4xyQ0chsEC-QEKWKqxdmjg18bKnmGdXllZE){: .align-center}
+![oscillation](http://dataplusplus.ca/blog/content/1-2017/20171002-gradient-descent-with-momentum/gd.png){: .align-center}
 <center><a href="http://dataplusplus.ca/blog/2017/gradient-descent-with-momentum">المصدر</a></center>
 
 <div rtl='rtl'>
