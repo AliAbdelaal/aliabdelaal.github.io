@@ -111,7 +111,9 @@ tag_archive:
   path: /tags/
 
 comments:
-  provider: "facebook"
+  provider: "disqus"
+  disqus:
+    shortname: "aliabdelaal-github-io"  
   facebook:
     appid: # optional
     num_posts: # 5 (default)
