@@ -13,6 +13,38 @@ toc_sticky: true
 breadcrumbs: true
 ---
 
+<script src="https://formspree.io/js/formbutton-v1.min.js" defer></script>
+<script>
+   window.formbutton=window.formbutton||function(){(formbutton.q=formbutton.q||[]).push(arguments)};
+   formbutton("create", {
+     title: "Hello there 👋",
+     description: "Subscribe for my new content, or drop a message 🥳",
+     action: "https://formspree.io/xbjzaerk",
+     theme: "classic",
+     fields: [{
+      name: "name",
+      type: "text",
+      label: "Your Name",
+      required: true,
+      placeholder: "Say your name 🤔"
+    },
+    {
+      name: "email",
+      type: "email",
+      label: "Your Email",
+      placeholder: "Enter your em@il 📬",
+      required: true
+    },
+    {
+      name: "Message",
+      type: "textarea",
+      placeholder: "drop a message ! 🤓 if you want to 🤷‍♂️"
+    },
+    {
+      type: "submit"
+    }],
+     })
+</script>
 
 ![img](https://www.wikitechy.com/technology/wp-content/uploads/2017/05/Telegram-Bots.png)
 
