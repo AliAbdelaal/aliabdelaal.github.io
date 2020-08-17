@@ -331,7 +331,8 @@ print(len(my_permutations))
 ```python
 from itertools import combinations
 numbers = [1, 2, 3, 4, 5]
-my_combs = combinations(numbers)
+# 3 here represents K in our exampleZ
+my_combs = combinations(numbers, 3)
 for comb in my_combs:
   print(comb)
 
@@ -354,7 +355,8 @@ for comb in my_combs:
 ```python
 from itertools import combinations
 numbers = [1, 2, 3, 4, 5]
-my_combs = list(combinations(numbers))
+# 3 here represents K in our exampleZ
+my_combs = list(combinations(numbers, 3))
 print(len(my_combs))
 >>> 10
 ```
