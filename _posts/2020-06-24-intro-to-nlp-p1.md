@@ -14,7 +14,7 @@ tags:
   - machine learning
 toc: true
 toc_sticky: true
-toc_label: "الفهرس"
+toc_label: "المحتويات"
 classes: wide
 ---
 

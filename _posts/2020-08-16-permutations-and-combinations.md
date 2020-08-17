@@ -13,7 +13,7 @@ tags:
   - math
 toc: true
 toc_sticky: true
-toc_label: "الفهرس"
+toc_label: "المحتويات"
 ---
 
 <script src="https://formspree.io/js/formbutton-v1.min.js" defer></script>
@@ -331,7 +331,7 @@ print(len(my_permutations))
 ```python
 from itertools import combinations
 numbers = [1, 2, 3, 4, 5]
-# 3 here represents K in our exampleZ
+# 3 here represents K in our example
 my_combs = combinations(numbers, 3)
 for comb in my_combs:
   print(comb)
@@ -355,7 +355,7 @@ for comb in my_combs:
 ```python
 from itertools import combinations
 numbers = [1, 2, 3, 4, 5]
-# 3 here represents K in our exampleZ
+# 3 here represents K in our example
 my_combs = list(combinations(numbers, 3))
 print(len(my_combs))
 >>> 10
