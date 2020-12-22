@@ -34,6 +34,12 @@ timezone: EG
 include:
   - _pages
 
+analytics:
+  provider: "google-gtag"
+  google:
+    tracking_id: "UA-166658954-1"
+    anonymize_ip: false # default
+
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
 # to override the default setting.
