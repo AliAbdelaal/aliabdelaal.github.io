@@ -4,6 +4,7 @@ tagline: "نظرة عامة في مجال معالجة اللغة باستخدا
 excerpt: "نظرة عامة في مجال معالجة اللغة باستخدام خوارزميات تعلم الآلة"
 header:
   overlay_image: https://unsplash.com/photos/6jlYDFfyuCQ/download?force=true
+  overlay_filter: 0.5 # same as adding an opacity of 0.5 to a black background
   caption: "Photo credit: [**Unsplash**](https://unsplash.com)"
   teaser: https://unsplash.com/photos/6jlYDFfyuCQ/download?force=true
 categories:
@@ -18,38 +19,12 @@ toc_label: "المحتويات"
 classes: wide
 ---
 
-<script src="https://formspree.io/js/formbutton-v1.min.js" defer></script>
-<script>
-   window.formbutton=window.formbutton||function(){(formbutton.q=formbutton.q||[]).push(arguments)};
-   formbutton("create", {
-     title: "Hello there 👋",
-     description: "Subscribe for my new content, or drop a message 🥳",
-     action: "https://formspree.io/xbjzaerk",
-     theme: "classic",
-     fields: [{
-      name: "name",
-      type: "text",
-      label: "Your Name",
-      required: true,
-      placeholder: "Say your name 🤔"
-    },
-    {
-      name: "email",
-      type: "email",
-      label: "Your Email",
-      placeholder: "Enter your em@il 📬",
-      required: true
-    },
-    {
-      name: "Message",
-      type: "textarea",
-      placeholder: "drop a message ! 🤓 if you want to 🤷‍♂️"
-    },
-    {
-      type: "submit"
-    }],
-     })
-</script>
+<script src="https://unpkg.com/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 56,
+  backgroundColor: 'rgb(128, 128, 128)',
+  textColor: '#fff'
+})</script>
 
 ## مقدمة
 {: .text-right}
