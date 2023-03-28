@@ -65,14 +65,8 @@ plugins:
 author:
   name   : "Ali Abdelaal"
   avatar : "/assets/images/bio-photo.jpg"
-  bio    : "A tech geek , ambitious engineer and  programming addict \n;"
+  bio    : "Software engineer interested in natural language processing, machine learning and teaching."
   links:
-    - label: "Twitter"
-      icon: "fab fa-fw fa-twitter-square"
-      url: "https://twitter.com/3b3aal_ali"
-    - label: "GitHub"
-      icon: "fab fa-fw fa-github"
-      url: "https://github.com/aliabdelaal"
     - label: "LinkedIn"
       icon: "fab fa-linkedin"
       url: "https://www.linkedin.com/in/aliabdelaal/"
@@ -84,9 +78,9 @@ owner:
 
 footer:
   links:
-    - label: "Twitter"
-      icon: "fab fa-fw fa-twitter-square"
-      url: "https://twitter.com/3b3aal_ali"
+    - label: "LinkedIn"
+      icon: "fab fa-linkedin"
+      url: "https://www.linkedin.com/in/aliabdelaal/"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/aliabdelaal"
