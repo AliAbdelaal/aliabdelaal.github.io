@@ -1,0 +1,1148 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Introduction to NLP in Arabic - part 2 - Ali’s Workspace</title>
+<meta name="description" content="نظرة عامة في مجال معالجة اللغة باستخدام خوارزميات تعلم الآلة الجزء الثاني">
+
+
+  <meta name="author" content="Ali Abdelaal">
+  
+  <meta property="article:author" content="Ali Abdelaal">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Ali's Workspace">
+<meta property="og:title" content="Introduction to NLP in Arabic - part 2">
+<meta property="og:url" content="/blog/intro-to-nlp-p2/">
+
+
+  <meta property="og:description" content="نظرة عامة في مجال معالجة اللغة باستخدام خوارزميات تعلم الآلة الجزء الثاني">
+
+
+
+  <meta property="og:image" content="https://unsplash.com/photos/LBKxu77KpSY/download?force=true">
+
+
+
+
+
+  <meta property="article:published_time" content="2023-03-27T00:00:00+00:00">
+
+
+
+
+
+
+<link rel="canonical" href="/blog/intro-to-nlp-p2/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": null,
+      "url": "/"
+    
+  }
+</script>
+
+
+  <meta name="google-site-verification" content="SB7EBK1J2IC4oNTmK8HHhFbkw9-m759bj5AAsdqCtkY" />
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Ali's Workspace Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML"></script>
+  
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Ali's Workspace
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/posts/">Blogs</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">Tags</a>
+            </li><li class="masthead__menu-item">
+              <a href="/about/">About</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+  
+
+
+
+
+
+
+
+<div class="page__hero--overlay"
+  style=" background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://unsplash.com/photos/LBKxu77KpSY/download?force=true');"
+>
+  
+    <div class="wrapper">
+      <h1 id="page-title" class="page__title" itemprop="headline">
+        
+          Introduction to NLP in Arabic - part 2
+
+        
+      </h1>
+      
+        <p class="page__lead">نظرة عامة في مجال معالجة اللغة باستخدام خوارزميات تعلم الآلة الجزء الثاني
+</p>
+      
+      
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          13 minute read
+        
+      </span>
+    
+  </p>
+
+
+      
+      
+    </div>
+  
+  
+    <span class="page__hero-caption">Photo credit: <a href="https://unsplash.com"><strong>Unsplash</strong></a>
+</span>
+  
+</div>
+
+
+
+
+
+<div id="main" role="main">
+  
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Introduction to NLP in Arabic - part 2">
+    <meta itemprop="description" content="نظرة عامة في مجال معالجة اللغة باستخدام خوارزميات تعلم الآلة الجزء الثاني">
+    <meta itemprop="datePublished" content="2023-03-27T00:00:00+00:00">
+    
+
+    <div class="page__inner-wrap">
+      
+
+      <section class="page__content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> المحتويات</h4></header>
+              <ul class="toc__menu"><li><a href="#مقدمة">مقدمة</a></li><li><a href="#كيف-يعمل-word2vec">كيف يعمل word2vec</a><ul><li><a href="#cbow">CBOW</a></li><li><a href="#skip-gram">Skip-gram</a></li><li><a href="#الاستخدام-بعد-التدريب">الاستخدام بعد التدريب</a></li></ul></li><li><a href="#استخدام-ال-cnn-في-معالجة-اللغة">استخدام ال CNN في معالجة اللغة</a><ul><li><a href="#محاكاة-مجموعة-الكلمات-من-متجهات-الكلمات-n-gram-using-cnn">محاكاة مجموعة الكلمات من متجهات الكلمات (N-Gram using CNN)</a></li><li><a href="#تعلم-متجهات-الاحرف-char-embeddings">تعلم متجهات الاحرف (char embeddings)</a></li></ul></li><li><a href="#محاكاة-البيانات-التسلسلية-sequential-modeling">محاكاة البيانات التسلسلية (Sequential modeling)</a><ul><li><a href="#كيفية-عمل-الشبكة-التكرارية-rnn">كيفية عمل الشبكة التكرارية (RNN)</a></li><li><a href="#الشبكة-التكرارية-ذات-الابواب-gated-recurrent-unit">الشبكة التكرارية ذات الابواب (Gated Recurrent Unit)</a></li><li><a href="#الشبكة-ذات-الذاكرة-الطويلة-و-القصيرة-المدى-long-short-term-memory---lstm">الشبكة ذات الذاكرة الطويلة و القصيرة المدى (Long Short Term Memory - LSTM)</a></li><li><a href="#تعديلات-الشبكة-التكرارية">تعديلات الشبكة التكرارية</a></li><li><a href="#حدود-الشبكة-التكرارية">حدود الشبكة التكرارية</a></li></ul></li><li><a href="#الاستنتاج">الاستنتاج</a></li><li><a href="#مصادر">مصادر</a></li></ul>
+
+            </nav>
+          </aside>
+        
+        <script src="https://unpkg.com/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js"></script>
+
+<script>addBackToTop({
+  diameter: 56,
+  backgroundColor: 'rgb(128, 128, 128)',
+  textColor: '#fff'
+})</script>
+
+<h2 class="text-right" id="مقدمة">مقدمة</h2>
+
+<div dir="rtl">
+هذا المقال تكملة للمقال السابق، يمكنك الاطلاع عليه من <a href="/blog/intro-to-nlp-p1/">هنا</a>
+</div>
+
+<div dir="rtl">
+في المقال السابق تحدثنا عن نماذج مختلفة لمعالجة النصوص باستخدام خوارزميات تعلم الآلة، وتوقفنا عند بعض النقاط عند كل نموذج، دعنا نراجعها سريعا.
+</div>
+
+<div dir="rtl">
+<ul>
+
+<li><div dir="rtl">
+ذكرنا في المرة السابقة استخدام Bag of words و وضحنا ان هذا النموذج لايأخذ في الحسبان ترتيب الكلمات وايضا لا يستطيع فهم معاني الكلمات فبالنسبة لهذا النموذج كل الكلمات سواء و الفارق هو عدد مرات تكرارهم.
+</div></li>
+
+<li><div dir="rtl">
+ذكرنا ايضا كيف ان استخدام معدل تكرار الكلمة في النصوص (TFIDF) يمكن ان يساعد في تميز الكلمات المهمة عن باقي الكلمات ولكنه ايضا يعاني من نفس مشاكل الطريقة السابقة.
+</div></li>
+
+<li><div dir="rtl">
+ثم ذكرنا نموذج متجهات الكلمات word2vec و ذكرنا كيف ان استخدام هذا النموذج يساعد في الحصول على متجه يعبر عن معنى الكلمات ولكن مازال لدينا بعض الملحوظات مثل ان الكلمة تحصل على نفس المتجه بغض النظر عن اختلاف السياق.
+</div></li>
+
+</ul>
+</div>
+
+<div dir="rtl">
+في هذا المقال سنتعرف على كيفية التغلب على المشاكل السابقة باستخدام نماذج اكثر تطورا، سنتحدث عن الجمع بين نموذج word2vec و نموذج CNN لجمع اكتر من متجه و محاكاة طريقة ال N-Grams. أيضا سنتحدث عن محاكاة البيانات التسلسلية (sequential data) باستخدام نموذج RNN.</div>
+
+<h2 class="text-right" id="كيف-يعمل-word2vec">كيف يعمل word2vec</h2>
+
+<div dir="rtl">
+فهم كيفية عمل هذا النموذج سوف تساعدنا على معرفة حدوده بشكل افضل و ربما كيفية التغلب عليها!
+</div>
+
+<div dir="rtl">
+يوجد نوعان من نموذج word2vec هما CBOW (continous bag of word) و skip-gram، النوعان يختلفان في طريقة تدريبهما قليلا لكن الاستخدام لاحقا يكون في نفس السياق الا وهو توليد متجهات ذات معنى للكلمة.
+</div>
+
+<p><br /></p>
+
+<p><img src="/assets/images/intro-to-nlp-p2/word2vec.png" alt="word2vec-arch" class="align-center" /></p>
+<center><a href="https://arxiv.org/abs/1301.3781">المصدر</a></center>
+
+<h3 class="text-right" id="cbow">CBOW</h3>
+
+<div dir="rtl">
+طريقة ال CBOW تعتمد على تعلم الكلمة الوسطى من الكلمات المحيطة، هذا عن طريق ادخال متجهات الكلمات المحيطة و محاولة تعلم الكلمة الوسطى
+</div>
+
+<div dir="rtl">
+بالطبع في البداية لن يتوقع النموذج الكلمة الصحيحة ولكن مع التدريب و محاولة تقليص الخطأ باستخدام اسلوب <a href="/blog/gradient-descent-family/">النزول التدريجي في معدل الخطأ (gradient descent)</a> يتحسن اداء النموذج ليستطيع توقع الكلمة الصحيحة اذا ادخلنا الكلمات المحيطة، على سبيل المثال عندما ندخل للنموذج اريد ان ... كوب عصير، سيقوم النموذج بتوقع ان الكلمة الوسطى هنا هي "اشرب" لان هذا ما يدل عليه السياق.
+</div>
+
+<div dir="rtl" class="notice--info">
+نماذج التعلم العميق (deep learning) تعتبر بالاساس معادلات معقدة تحاول تخمين ما هي القيم التقريبية للمتغيرات التي تكون هذه المعادلات في البداية يتم تخمين قيم عشوائية لهذه المتغيرات و يتم احتساب قيم التوقعات و مقارنتها بالقيم الحقيقية و احتساب معدل الخطأ بينهما، و باستخدام خصائص التفاضل يمكننا معرفة التغييرات المطلوبة في كل متغير حتى نقوم بتقليل معدل الخطأ و يحدث هذا في عملية ال (gradient descent) يمكنك مراجعة تفاصيل اكثر في <a href="/blog/gradient-descent-family/">مقال سابق</a> حيث نتحدث عن تفاصيل هذه العملية بشكل اكبر.
+</div>
+
+<p><br /></p>
+
+<p><img src="https://cdn-images-1.medium.com/max/800/1*d66FyqIMWtDCtOuJ_GcqAg.png" alt="word2vec-cbow" class="align-center" /></p>
+<center><a href="https://www.kdnuggets.com/2018/04/implementing-deep-learning-methods-feature-engineering-text-data-cbow.html">المصدر</a></center>
+
+<h3 class="text-right" id="skip-gram">Skip-gram</h3>
+
+<div dir="rtl">
+طريقة ال skip-gram تعتمد على تعلم السياق من الكلمة الوسطى (عكس الطريقة السابقة).
+</div>
+
+<div dir="rtl">
+لتبسيط طريقة تعلم هذا النموذج نقوم بتحضير المدخلات لهذا النموذج على النحو التالي.
+</div>
+
+<table>
+  <thead>
+    <tr>
+      <td align="center">السياق<br />
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>    
+        <span>&nbsp;&nbsp;</span>
+      </td>
+      <td align="center">الكلمة قبل<br />
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>        
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+        <span>&nbsp;&nbsp;</span>
+      </td>
+      <td align="center">الكلمة بعد<br />
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>    
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>     
+        <span>&nbsp;&nbsp;</span>        
+      </td>
+      <td align="center">صحة السياق<br />
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>    
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>     
+        <span>&nbsp;&nbsp;</span>        
+      </td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td align="center">شرب<br />
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>    
+        <span>&nbsp;&nbsp;</span>
+      </td>
+      <td align="center">اريد<br />
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>        
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+        <span>&nbsp;&nbsp;</span>
+      </td>
+      <td align="center">العصير<br />
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>    
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>     
+        <span>&nbsp;&nbsp;</span>        
+      </td>
+      <td align="center">1<br />
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>    
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>     
+        <span>&nbsp;&nbsp;</span>        
+      </td>
+    </tr>
+    <tr>
+      <td align="center">اكل<br />
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>    
+        <span>&nbsp;&nbsp;</span>
+      </td>
+      <td align="center">اريد<br />
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>        
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+        <span>&nbsp;&nbsp;</span>
+      </td>
+      <td align="center">العصير<br />
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>    
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>     
+        <span>&nbsp;&nbsp;</span>        
+      </td>
+      <td align="center">0<br />
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>    
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>     
+        <span>&nbsp;&nbsp;</span>        
+      </td>
+    </tr>
+
+  </tbody>
+</table>
+
+<div dir="rtl">
+يمكنك ان ترى هنا اننا استخدمنا كلمة واحدة قبل و بعد كلمة السياق لكن يمكن ان يكون اكثر او اقل (اقل بان نستخدم كلمة واحدة قبل او بعد).
+</div>
+
+<div dir="rtl">
+هنا يصبح هدف النموذج ان يتوقع إذا كانت الكلمات المعطاه تنتمي الي نفس السياق ام لا و ايضا في البداية لن يتوقع النموذج الاجابة الصحيحة ولكن بعد التدريب و التصحيح يمكنه ذلك.
+</div>
+
+<p><br />
+<img src="https://cdn-images-1.medium.com/max/800/1*4Uil1zWWF5-jlt-FnRJgAQ.png" alt="word2vec-skip-gram" class="align-center" /></p>
+<center><a href="https://www.kdnuggets.com/2018/04/implementing-deep-learning-methods-feature-engineering-text-data-skip-gram.html">المصدر</a></center>
+
+<div dir="rtl" class="notice--info">
+استخدام نماذج ايجابية و سلبية في التدريب يعد من اشهر الطرق في تدريب نماذج تعلم اللغة و تسمى هذه الطريقة بال (negative sampling) يمكنك الاطلاع على معلومات اكثر من خلال <a href="https://www.coursera.org/lecture/nlp-sequence-models/negative-sampling-Iwx0e">هذا الفيديو القصير</a>.
+</div>
+
+<h3 class="text-right" id="الاستخدام-بعد-التدريب">الاستخدام بعد التدريب</h3>
+
+<div dir="rtl">
+بعد انتهاء عملية التدريب نقوم باستخراج مرحلة تحويل النص الي متجه (embedding layer) بعد ان تعلمت كيف تصف الكلمة المعطاه بمتجه يمثل معناها، و في هذه المرحلة كل كلمة تم التدريب عليها لها متجه ثابت الان لا يمكن تغييره بناءا على السياق الخاص بالجملة و لكنه بالتأكيد افضل من استخدام الطرق السابقة مثل (bag of words) للتعبير عن النصوص.
+</div>
+
+<p><img src="https://www.tensorflow.org/text/guide/images/embedding2.png" alt="word-embeddings" class="align-center" /></p>
+<div dir="rtl">
+<center>مثال على استخدام ال embdding layer لمتجه حجمه 4 متغيرات. <a href="https://www.tensorflow.org/text/guide/word_embeddings">المصدر</a></center></div>
+
+<h2 class="text-right" id="استخدام-ال-cnn-في-معالجة-اللغة">استخدام ال CNN في معالجة اللغة</h2>
+
+<div dir="rtl">
+تعد ال CNN (Convolutional Neural Network) الاكثر شهرة و استخداما في مجال معالجة الصور ولكن ايضا تستخدم في معالجة النصوص كما سنرى في الامثلة الاتية.
+</div>
+
+<h3 class="text-right" id="محاكاة-مجموعة-الكلمات-من-متجهات-الكلمات-n-gram-using-cnn">محاكاة مجموعة الكلمات من متجهات الكلمات (N-Gram using CNN)</h3>
+
+<div dir="rtl">
+تكلمنا في المقال السابق عن كيف ان استخدام اكثر من كلمة كوحدة للمعالجة (N-grams) يساعد على فهم معلومات اكثر في النص لان بعض المصطلحات يشمل اكثر من كلمة مثل مصطلح (حسبي الله  و نعم الوكيل) على سبيل المثال.
+</div>
+
+<div dir="rtl">
+يمكننا استخدام ال CNN لتحصيل المعلومات التي تشتمل عليها مجموعة كلمات من متجهاتها، باستخدام طبيعة ال CNN الالتفافية يمكننا ان نمر على اكثر من كلمة باستخدام نافذة متحركة بحجم معين (مثلا 3 للتعبير عن 3-grams) كما هو موضح في المثال بالاسفل.
+</div>
+
+<p><img src="https://cezannec.github.io/assets/cnn_text/conv_maxpooling_steps.gif" alt="cnn-n-grams" class="align-center" /></p>
+<div dir="rtl">
+<center><a href="https://cezannec.github.io/CNN_Text_Classification/">المصدر</a></center></div>
+
+<h3 class="text-right" id="تعلم-متجهات-الاحرف-char-embeddings">تعلم متجهات الاحرف (char embeddings)</h3>
+
+<div dir="rtl">
+يمكن ايضا استخدام ال CNN على مستوى الحروف لتعلم ما تعبر عنه الحروف و بالتالي ببناء اكثر من طبقة متتالية من نوعية CNN يمكن تكوين معرفة عن النص ككل، فكل طبقة/مرحلة سوف تتعلم مما تعلمته السابقة.
+</div>
+
+<div dir="rtl" class="notice--info">
+استخدام الحروف بدلا للكلمات يساعد على تفادي عدم معرفة الكلمات الجديدة، ويساعد ايضا على الاستفادة من التكوين المشترك لبعض الكلمات و الاجزاء المشتركة على سبيل المثال يمكننا ان ندرك ان يحب و احب و يحبوا يشتركوا في حرفي الحاء و الباء و لذلك فان الكلمات المشتقة منها يمكن للنوذج معرفتها على عكس النماذج التي تعتمد على الكلمات كوحدة للمعالجة اذ ان الكلمة اذا كانت جديدة شكليا بزيادة حرف على سبيل المثال لن يعرفها النموذج، هذه الطريقة تم استخدامها في نموذج <a href="https://fasttext.cc/">fasttext</a>  الخاص بشركة facebook، حيث انه استخدم بالاساس مجموعة حروف بدل من كلمات محددة و قد اظهر تحسن ملحوظ عن استخدام الكلمات فقط في معمارية CBOW و skip-gram لاستخراج المتجهات.
+</div>
+
+<div dir="rtl">
+</div>
+
+<p><img src="https://www.researchgate.net/profile/Hoang-Pham-17/publication/316875275/figure/fig1/AS:493031154556929@1494559195862/The-CNN-for-extracting-character-level-features-of-word-Hoc-sinh-Student.png" alt="char-embeddings-cnn" class="align-center" /></p>
+<div dir="rtl">
+<center><a href="https://www.researchgate.net/figure/The-CNN-for-extracting-character-level-features-of-word-Hoc-sinh-Student_fig1_316875275">المصدر</a></center></div>
+
+<h2 class="text-right" id="محاكاة-البيانات-التسلسلية-sequential-modeling">محاكاة البيانات التسلسلية (Sequential modeling)</h2>
+
+<div dir="rtl">
+تعد البيانات النصية بيانات تسلسلية، إذ ان ترتيب الكلمات قد يغير المعنى تماما و بالتالي لكي يستطيع نموذج تعلم ما يحتويه النص لابد ان يأخذ في الاعتبار التسلسل و ترتيب الكلمات، و هذا ما لم يفعله ايا من النماذج السابق ذكرها، كما ترى في المثال هنا ان استخدام الشبكة العصبية التقليدية (ANN) ليس لديه اي معلومة عن ترتيب النص لان تغير النص لن يغير في معادلته شئ.
+</div>
+
+<p><img src="/assets/images/intro-to-nlp-p2/ann.png" alt="ann-words" class="align-center" /></p>
+<center>استخدام شبكة عصبية مع الكلمات بفرض استخدام الكلمات كوحدة معالجة</center>
+
+\[h1('product','was','not','good')=\]
+
+<p><br />
+\(W_{1,1}*'product'+W_{1,2}*'was'+W_{1,3}*'not'+ W_{1,4}*'good'\)</p>
+
+<div dir="rtl">
+لاحظ هنا ان اختلاف الترتيب لن يغير في المعني شئ لانه لا توجد آلية لتعلم العلاقة التي تنشئ من ترتيب الكلمات بشكل معين.
+</div>
+
+<div dir="rtl">
+يمكننا تعديل هذه المعمارية بإضافة آلية لتعلم العلاقة التي تنشأ من ترتيب النص كما يلي
+</div>
+
+<p><img src="/assets/images/intro-to-nlp-p2/rnn.png" alt="rnn-words" class="align-center" /></p>
+<center>الشبكة العصبية التكرارية (Recurrent Neural Network)</center>
+
+\[h1(x) = {\color{Red} h1('good', } {\color{Green} h1('not',} {\color{Blue} h1('was', } {\color{Yellow} h1('product', '&lt;sos&gt;')}{\color{Blue} )}{\color{Green} )}{\color{Red} )}\]
+
+<div dir="rtl">
+كما نرى هنا كل خطوة في هذه المعمارية تعتمد على الخطوة السابقة لها بالتالي يمكن للنموذج ان يتعلم ما يعنيه ترتيب الكلمات بشكل افضل.
+</div>
+
+<div dir="rtl" class="notice--info">
+الشبكة التكرارية تعمل عن طريق معالجة النصوص بالتتالي، اي ان نفس وحدة المعالجة (الخلية/cell) تقوم بمعالجة الكلمة الاولى ثم الكلمة الثانية و هكذا و لاحظ هنا ان نفس الوحدة تعالج الكلمات بالتتالي و هذا يمنحها القدرة على تعلم العلاقة الموجودة بين الكلمات بناءا على ترتيبهم.
+<br />
+
+<center>
+<img src="https://www.outsystems.com/blog/-/media/images/blog/posts/graph-neural-networks/nn-gif-2.gif?h=393&amp;w=750&amp;updated=20220111091724" /></center>
+<center><a href="https://www.outsystems.com/blog/posts/graph-neural-networks/">المصدر</a></center>
+
+</div>
+
+<div dir="rtl">
+تقوم هذه المعمارية ببناء فكرة عن النص في كل خطوة زمنية، و هنا الخطوة الزمنية تعني ترتيب الكلمات اي ان الخطوة الزمنية الاولى هي الكلمة الاولى و هكذا، ويمكننا القول ان عند اي نقطة زمنية تقوم الشبكة بتكوين معلومات عن النص حتى هذه النقطة في الزمن و بالتالي عند اخر كلمة ستكون الشبكة كونت فكرة عن النص ككل.
+</div>
+
+<p><br /></p>
+
+<div dir="rtl">
+يمكن استخدام هذه المعمارية في حل العديد من مسائل معالجة اللغة كما يلي.
+</div>
+
+<p><img src="https://camo.githubusercontent.com/dd88a4672c10fc5e3d6fcf33bcbc4f142f14bbdd3929aa7a336b8c50bc7033fb/687474703a2f2f6b617270617468792e6769746875622e696f2f6173736574732f726e6e2f64696167732e6a706567" alt="rnn-different-approaches" /></p>
+<center><a href="http://karpathy.github.io/2015/05/21/rnn-effectiveness/">المصدر</a></center>
+
+<div dir="rtl">
+الشكل السابق يمثل 5 انواع من مسائل معالجة اللغة
+<ul>
+<li>الاول (one-to-one) يمثل الطريقة غير التسلسلية حيث حجم المدخلات و المخرجات ثابت.</li>
+<li>الثاني (one-to-many) عندما نستخدم مدخل واحد مقابل اكثر من نتيجة مثل وصف الصور حيث يكون المدخل هو الصورة و النتيجة هي النص الذي يصف الكلمة و بالطبع يمكن ان يكون اكثر من كلمة.</li>
+<li>الثالث (many-to-one) يعبر عن اكثر من مدخل (قطعة نصية على سبيل المثال) مقابل نتيجة واحدة (تصنيف النص اذا كان ايجابي او سلبي على سبيل المثال).</li>
+<li>الرابع (many-to-many) هنا يتم استهلاك المدخلات كلها قبل ان يتم بناء النتيجة والامثلة على هذا النوع تشمل (الترجمة الآلية و تلخيص النصوص و غيرها).</li>
+<li>الخامس (many-to-many) مثل السابق ولكن هنا يوجد نتيجة مباشرة لكل وحدة مدخلة (الوحدة قد تكون كلمة او حرف او مجموعة حروف (character n-grams) على حسب تعريف المدخلات) و احد الامثلة على هذا النوع هو التعرف على الاسماء المعرفة في النص (Named Entity Recognition).</li>
+</ul>
+</div>
+
+<h3 class="text-right" id="كيفية-عمل-الشبكة-التكرارية-rnn">كيفية عمل الشبكة التكرارية (RNN)</h3>
+
+<div dir="rtl">
+تعمل الشبكة التكرارية على تعلم العلاقة التي تنشأ من ترتيب النصوص عن طريق تعلم مجموعة من المتغيرات التي تحدد ما الذي يجب تعلمه من النص الحالي و ما الذي يجب تعلمه من الخطوة السابقة (t-1)، كما نرى في الرسم الآتي:
+<ol>
+<li>ان الكلمة الحالية (Very) يتم معالجتها لتوليد متجه يعبر عنها (Very vector).</li>
+<li>يتم معالجة هذا المتجه من خلال المصفوفة X(t) و هي المسئولة عن اضافة ما يجب اضافته و ازالة ما لا تحتاجه الشبكة لتعلم ما يعنيه النص.</li>
+<li>الخطوة السابقة للشبكة (RNN Hidden state t-1) التي تمثل المعالجة الناتجة عن الكلمات السابقة يتم معالجتها من خلال مصفوفة اخرى a(t-1) حيث يكون هدفها تعلم ما يجب ان يتم اضافته من الخطوات السابقة و ما يجب ان يتم ازالته.</li>
+<li>يتم الجمع بين الخطوتين 2 و 3 و معالجتهم من خلال مرحلة غير خطية تمثلها هنا الدالة tanh و ينتج عنها متجه يعبر عن حالة/فهم الشبكة للنص حتى هذه اللحظة (RNN Hidden state t).</li>
+</ol>
+</div>
+
+<p><img src="/assets/images/intro-to-nlp-p2/inside-rnn-1.png" alt="inside-rnn-1" class="align-center" /></p>
+<center><div dir="rtl">معالجة الكلمة الاولى من النص (Very)</div></center>
+<p><br /></p>
+
+<div dir="rtl">
+ثم يتم تكرير الخطوات السابقة باستخدام نفس المصفوفات X(t) و a(t-1) مع الكلمة التالية كما هو موضح بالشكل الاتي
+</div>
+
+<p><img src="/assets/images/intro-to-nlp-p2/inside-rnn-2.png" alt="inside-rnn-2" class="align-center" /></p>
+<center><div dir="rtl">معالجة الكلمة الثانية من النص (good)</div></center>
+
+<p><br /></p>
+
+<div dir="rtl">
+هذه العملية تسمح للشبكة بعد التدريب و تعديل قيم متغيراتها باستخدام النزول التدريجي و تصحيح اخطائها بان تتعلم القيم المناسبة للمصفوفات الخاصة بها لكي تستطيع تعلم النص بشكل يناسب المسئلة التي نقوم بحلها.
+</div>
+
+<h3 class="text-right" id="الشبكة-التكرارية-ذات-الابواب-gated-recurrent-unit">الشبكة التكرارية ذات الابواب (Gated Recurrent Unit)</h3>
+
+<div dir="rtl">
+الوصف السابق للشبكة التكرارية يعاني من مشكلة اساسية و هي ان مع طول النص سيكون من الصعب على الشبكة تذكر ما كان في بداية الجملة لان كما نرى في آلية العمل هنا ان الكلمة الحالية و الحالة السابقة لديهم قدرة كبيرة على تغيير حالة الشبكة ولا يوجد آلية للابقاء على المعلومات السابقة في النص.
+</div>
+
+<div dir="rtl">
+لذا تم استحداث نموذج معدل من الشبكة التكرارية هو الشبكة التكرارية ذات الابواب (Gated Recurrent Unit GRU) و هي كما يقول الاسم عبارة عن شبكة تكرارية ولكن مع اضافة بوابات، تقوم هذه البوابات بالسماح للشبكة بالحفاظ على معلومات من خطوات سابقة عن طريق تعلم مجموعة متغيرات جديدة تكون البوابة التي تتحكم في مرور او عدم مرور المعلومات الناتجة من الكلمة الحالية و الكلمات السابقة كما هو موضح بالشكل الاتي.
+</div>
+
+<p><img src="/assets/images/intro-to-nlp-p2/gru-1.png" alt="gru-1" class="align-center" /></p>
+<center><div dir="rtl">GRU</div></center>
+
+<div dir="rtl">
+لفهم اعمق لما يحدث هنا دعنا نلقي نظرة على المعادلات لهذا المجسم
+</div>
+
+\[\tilde{C} = tanh(W_c [C^{t-1}, X^t] + b_c)\]
+
+<div dir="rtl">
+هذه المعادلة تمثل الشبكة التكرارية العادية (Vanilla RNN)
+</div>
+
+\[\Gamma_u = \sigma(W_u [C^{t-1}, X^t] + b_u)\]
+
+<div dir="rtl">
+هنا يتم تعلم البوابة التي تتحكم في مرور المعلومات من الكلمة الجديدة و الكلمات السابقة، و كما ترى هنا فهي معادلة تعتمد على الكلمة الحالية Xt و الحالة السابقة للشبكة C(t-1)
+</div>
+
+<p><img src="/assets/images/intro-to-nlp-p2/gru-2.png" alt="gru-2" class="align-center" /></p>
+<center><div dir="rtl">عند هذه النقطة لدينا المتجه Ct الذي يعبر عن الحالة الجديدة من الكلمة الحالية و كذلك المتجه r الذي سوق يستخدم كبوابة للتحكم في مرور المعلومات</div></center>
+
+\[C^t = \Gamma_u*\tilde{C} + (1-\Gamma_u)* C^{t-1}\]
+
+<div dir="rtl">
+لتكوين الحالة الجدية للشبكة Ctتقوم البوابة في التحكم في مرور المعلومات من الخطوة السابقة و الخطوة الحالية حيث كما نرى الجزء الاول r*C يتحكم في مرور المعلومات من الخطوة الحالية و الجزء الثاني (1-r)*C(t-1) يتحكم في مرور المعلومات من الخطوة السابقة.
+</div>
+
+<div dir="rtl">
+لاحظ هنا ان البوابة r تنتج من دالة sigmoid اي ان قيمها ستكون من 0 ل 1 بالتالي يمكنك التفكير فيها على انها تمنع قيم و تمرر قيم كما ترى في الشكل التالي.
+</div>
+
+<p><img src="/assets/images/intro-to-nlp-p2/gru-3.png" alt="gru-3" class="align-center" /></p>
+<center><div dir="rtl">ما يتم ازالته من متجه يتم تعويضه من المتجه الاخر</div></center>
+
+<div dir="rtl">
+تسمح هذه المعمارية بالاحتفاظ بمعلومات سابقة على عكس الشبكة التكرارية التقليدية، لهذا يمكنها معالجة نصوص اطول.
+</div>
+
+<h3 class="text-right" id="الشبكة-ذات-الذاكرة-الطويلة-و-القصيرة-المدى-long-short-term-memory---lstm">الشبكة ذات الذاكرة الطويلة و القصيرة المدى (Long Short Term Memory - LSTM)</h3>
+
+<div dir="rtl">
+استخدام البوابات في التحكم في مرور المعلومات يسمح للشبكة بتعلم النصوص الطويلة نسبيا و على غرار الشبكة ذات البوابات تم ايضا بناء نوع اخر من الشبكة التكرارية و هي الشبكة ذات الذاكرة الطويلة و القصيرة المدى (Long Short Term Memory - LSTM)، و تقوم هذا المعمارية بإضافة اكثر من بوابة للتحكم في مرور المعلومات و تعمل على اضافة ذاكرة طويلة المدى للحفاظ على المعلومات القديمة و كذلك ذاكرة قصيرة للتعبير عن المعلومات القريبة في النص.
+</div>
+
+<div dir="rtl">
+المبدأ المستخدم في الشبكة ذات الذاكرة لايختلف كثيرا عن ذات البوابات، حيث يوجد في الشبكة ذات الذاكرة ثلاث بوابات.
+</div>
+
+<div dir="rtl">
+<ul>
+<li><b>بوابة النسيان (Forget Gate)</b> تتحكم فيما يتم ازالته او اضافته على الذاكرة الطويلة السابقة (اي الذاكرة الطويلة الناتجة من الخطوة الزمنية السابقة)</li>
+<li><b>بوابة التحديث (Update Gate)</b> تتحكم فيما يتم ازالته او اضافته على الذاكرة الطويلة الجديدة (اي الذاكرة الطويلة التي سوف تنتجها الخطوة الزمنية الحالية)</li>
+<li><b>بوابة النتيجة (Output Gate)</b> تتحكم في الذاكرة قصيرة المدى الناتجة من الخلية الحالية</li>
+</ul>
+</div>
+
+<p><img src="/assets/images/intro-to-nlp-p2/lstm-1.png" alt="lstm-1" class="align-center" /></p>
+<center><div dir="rtl">Long Short Term Memory</div></center>
+
+<p><br /></p>
+
+<div dir="rtl">
+تعمل البوابات بشكل مشابه لما سبق شرحه، ها هي المعادلات لفهم افضل لما يحدث.
+</div>
+
+<p><br /></p>
+
+<p class="text-right">بوابة النسيان</p>
+
+\[\Gamma_f = \sigma(W_f [a^{t-1}, x^t] + b_f)\]
+
+<p class="text-right">بوابة التحديث</p>
+
+\[\Gamma_u = \sigma(W_u [a^{t-1}, x^t] + b_u)\]
+
+<p class="text-right">بوابة النتيجة</p>
+
+\[\Gamma_o = \sigma(W_o [a^{t-1}, x^t] + b_o)\]
+
+<p class="text-right">الذاكرة المقترحة C~</p>
+
+\[\tilde{C} = tanh(W_c [a^{t-1}, x^t] + b_c)\]
+
+<p class="text-right">الذاكرة طويلة المدى</p>
+
+\[C^t = \Gamma_u*\tilde{C} + \Gamma_f*C^{t-1}\]
+
+<div dir="rtl" class="notice--info">
+لاحظ هنا ان الذاكرة الطويلة الجديدة يتم تكوينها عن طريق الذاكرة الطويلة للخطوة السابقة بعد تمريرها على بوابة النسيان  اضافة الي الذاكرة الجديدة المقترحة بعد تمريرها على بوابة التحديث، وهذا يسمح للشبكة بالتحكم فيما يتم تمريره من الذاكرة السابقة و ما يتم تمريره من الذاكرة المقترحة.
+</div>
+
+<p class="text-right">الذاكرة قصيرة المدى</p>
+
+\[a^t = \Gamma_o*tanh(C^t)\]
+
+<h3 class="text-right" id="تعديلات-الشبكة-التكرارية">تعديلات الشبكة التكرارية</h3>
+
+<div dir="rtl">
+كأي شبكة عصبية يمكننا اضافة اكثر من طبقة من نفس النموذج لزيادة تعقيد النموذج و بالتالي تمكينه من تعلم انماط اكثر تعقيدا و لكن الشبكة التكرارية بطبيعة الحال تعاني من كونها تكرارية و يجب على كل الكلمات ان تمر بالشبكة كلمة تلو الاخرى مما يعني ان لمعالجة الكلمة الثانية في الطبقة الثانية من الشبكة يجب على كل الكلمات السابقة في نفس الطبقة ان تكون انتهت من المعالجة و كذلك كل الكلمات السابقة في الطبقات السابقة لها مما يجعل من الصعب تحقيق اقصى استفادة من الموارد المتاحة لتدريب نماذج اكبر. 
+</div>
+
+<p><br /></p>
+
+<p><img src="https://static.packt-cdn.com/products/9781787121089/graphics/image_06_008.png" alt="2-layer-rnn" class="align-center" /></p>
+<center><a href="https://subscription.packtpub.com/book/big_data_and_business_intelligence/9781787121089/6/ch06lvl1sec70/setting-up-a-deep-rnn-model">المصدر</a></center>
+
+<p><br /></p>
+
+<div dir="rtl">
+يمكننا ايضا جعل الشبكة التكرارية ترى في الاتجاهيين، بمعنى ان في اي لحظة زمنية يمكن للشبكة معرفة الكلمات السابقة و الكلمات القادمة و هذا يمكن ان يكون مفيد للغاية في تطبيقات مثل التعرف على الاسماء المعرفة (NER) على سبيل المثال، و يسمى هذا النوع من الشبكة بالشبكة التكرارية ثنائية الاتجاه (Bi-Directional RNN).
+</div>
+
+<div dir="rtl">
+لتحقيق هذا يمكننا استخدام شبكتين تكراريتين، واحدة تعالج النص من اليمين لليسار و الاخرى تقوم بالعكس، وعند معالجة الكلمة نستخدم مجموع ما تعلمته الشبكة و الاولى و الشبكة الثانية مما يضيف ثراء معلوماتي للكلمة.
+</div>
+
+<p><br /></p>
+
+<p><img src="https://miro.medium.com/max/764/1*6QnPUSv_t9BY9Fv8_aLb-Q.png" alt="bi-directional-rnn" class="align-center" /></p>
+<center><a href="http://colah.github.io/posts/2015-09-NN-Types-FP/">المصدر</a></center>
+
+<div dir="rtl" class="notice--info">
+لاحظ هنا ان كل شبكة لاترى النص ككل و انما تراه جزء فقط، اي ان الشبكة التي تعمل من اليسار لاترى الا الكلمات السابقة لها ولا ترى الكلمات التي سوف تأتي لاحقأ وكذلك الشبكة التي تعمل من اليمين لاترى الا الكلمات يمينها ولا ترى الكلمات في اليسار، لذلك يعتبر استخدام النموذج ثنائي الاتجاه تحايل على رؤية النص كله ولكن فعليا هذا لايحدث هنا بشكل كامل.
+</div>
+
+<h3 class="text-right" id="حدود-الشبكة-التكرارية">حدود الشبكة التكرارية</h3>
+
+<div dir="rtl">
+بسبب طبيعتها التكرارية كما ذكرنا من قبل فان الشبكة التكرارية تعاني عدم القدرة على الاستغلال الأمثل للموارد بمعنى انه لا يمكننا تدريب طبقات هذه الشبكة بالتوازي لان الخطوات الزمنية تعتمد على بعضها البعض لذا يجب على كل خطوة انتظار الخطوة السابقة لها مما يمنع تدريبها بشكل متوازي.
+</div>
+
+<div dir="rtl">
+ايضا الشبكة لا تر النص بشكل كامل كما ذكرنا حتى مع استخدام ثنائية الاتجاه لان كما ذكرنا كل شبكة ترى فقط الكلمات السابقة على حسب اتجاهها.
+</div>
+
+<div dir="rtl">
+وعلى الرغم من استخدام البوابات و الذاكرة للاحتفاظ بالمعلومات الا انه من الصعب الاحتفاظ بكل المعلومات مع طول النص المعالج لذلك يتم فقد جزء من معلومات النص.
+</div>
+
+<h2 class="text-right" id="الاستنتاج">الاستنتاج</h2>
+
+<div dir="rtl">
+في هذا المقال تحدثنا عن مبدأ ال word embeddings او تمثيل النصوص باستخدام متجهات تعبر عن المعنى و التي كانت قفزة كبيرة في عالم معالجة اللغة و ايضا تكلمنا عن طريقة عملها و طرق مختلفة في تطبيقها.
+</div>
+
+<div dir="rtl">
+تناولنا ايضا استخدام معماريات مختلفة مثل CNN و LSTM و كيفية عملهم و الصعوبات التي تواجه بعض النماذج.
+</div>
+
+<div dir="rtl">
+في المقال القادم سوف نتعرض لمعماريات (architectures) جديدة استطاعت ان تتغلب على ما سبقها في عدة مهام مما جعلها احدث ما ورد في المجال (State of the Art) حتى تاريخ كتابة هذا المقال 
+</div>
+
+<div dir="rtl" class="notice--success">
+في هذا المقال حاولت تبسيط بعض المصطلحات للغتنا العربية من اجل تسهيل عملية الشرح ولتبسيط المعلومة، في حالة اي خطأ املائي او اقتراح افضل للترجمة فأنا ارحب جدا بذلك يمكنك التعليق على المقال او مراسلتي لتعديل و تحسين المحتوى، ووفقنا الله وإياكم لما يحب ويرضى.
+</div>
+
+<h2 class="text-right" id="مصادر">مصادر</h2>
+
+<div dir="rtl">
+<ul>
+<li><a href="https://arxiv.org/abs/1301.3781">الورقة البحثية لنموذج word2vec</a></li>
+<li><a href="https://www.coursera.org/learn/nlp-sequence-models">كورس Sequence Models من deeplearning.ai</a></li>
+</ul>
+</div>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#arabic" class="page__taxonomy-item" rel="tag">arabic</a><span class="sep">, </span>
+    
+      <a href="/tags/#machine-learning" class="page__taxonomy-item" rel="tag">machine learning</a><span class="sep">, </span>
+    
+      <a href="/tags/#natural-language-processing" class="page__taxonomy-item" rel="tag">natural language processing</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#blog" class="page__taxonomy-item" rel="tag">Blog</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2023-03-27T00:00:00+00:00">March 27, 2023</time></p>
+
+
+      </footer>
+
+      <section class="page__share">
+  
+
+  <a href="https://twitter.com/intent/tweet?text=Introduction+to+NLP+in+Arabic+-+part+2%20%2Fblog%2Fintro-to-nlp-p2%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=%2Fblog%2Fintro-to-nlp-p2%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=%2Fblog%2Fintro-to-nlp-p2%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/blog/permutations-and-combinations/" class="pagination--pager" title="Permutations and Combinations in Arabic
+">Previous</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+      <div class="page__comments">
+  
+  
+      <h4 class="page__comments-title">Comments</h4>
+      <section class="fb-comments" data-href="/blog/intro-to-nlp-p2/" data-mobile="true" data-num-posts="5" data-width="100%" data-colorscheme="light"></section>
+    
+</div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">You May Also Enjoy</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://unsplash.com/photos/Oal07Ai4oTk/download?force=true" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/blog/permutations-and-combinations/" rel="permalink">Permutations and Combinations in Arabic
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          10 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">التباديل و التوافيق كما لم تراها في المدرسة
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://unsplash.com/photos/6jlYDFfyuCQ/download?force=true" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/blog/intro-to-nlp-p1/" rel="permalink">Introduction to NLP in Arabic - part 1
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          18 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">نظرة عامة في مجال معالجة اللغة باستخدام خوارزميات تعلم الآلة
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://images.unsplash.com/photo-1454496522488-7a8e488e8606?ixlib=rb-1.2.1&auto=format&fit=crop&w=1355&q=80" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/blog/gradient-descent-family/" rel="permalink">النزول التدريجي و بعض مشتقاته و استخدامهم في علم الآلة
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          13 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">في هذا المقال نتعرض لبعض خصائص النزول التدريجي و مشاكله و كيفية حلها باستخدام مشتقاته
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://images.unsplash.com/photo-1527430253228-e93688616381?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1491&q=80" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/blog/intro-to-ml/" rel="permalink">مقدمة في علم الآلة
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          12 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">في هذا المقال البسيط سوف نتعرض بشئ من التفصيل عن ماهية تعليم الآلة ما المقصود بها تحديدا و كيف تتعلم الآلة مع التطرق لبعض التفاصيل الرياضية لهذه العملية
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+
+    
+      
+        
+          <li><a href="https://www.linkedin.com/in/aliabdelaal/" rel="nofollow noopener noreferrer"><i class="fab fa-linkedin" aria-hidden="true"></i> LinkedIn</a></li>
+        
+      
+        
+          <li><a href="https://github.com/aliabdelaal" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2023 Ali's Workspace. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-166658954-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-166658954-1', { 'anonymize_ip': false});
+</script>
+
+
+
+
+
+
+    <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+  
+
+
+
+
+
+  </body>
+</html>

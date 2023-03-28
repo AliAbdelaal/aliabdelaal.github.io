@@ -1,0 +1,1168 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Introduction to NLP in Arabic - part 1 - Ali’s Workspace</title>
+<meta name="description" content="نظرة عامة في مجال معالجة اللغة باستخدام خوارزميات تعلم الآلة">
+
+
+  <meta name="author" content="Ali Abdelaal">
+  
+  <meta property="article:author" content="Ali Abdelaal">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Ali's Workspace">
+<meta property="og:title" content="Introduction to NLP in Arabic - part 1">
+<meta property="og:url" content="/blog/intro-to-nlp-p1/">
+
+
+  <meta property="og:description" content="نظرة عامة في مجال معالجة اللغة باستخدام خوارزميات تعلم الآلة">
+
+
+
+  <meta property="og:image" content="https://unsplash.com/photos/6jlYDFfyuCQ/download?force=true">
+
+
+
+
+
+  <meta property="article:published_time" content="2020-06-24T00:00:00+00:00">
+
+
+
+
+
+
+<link rel="canonical" href="/blog/intro-to-nlp-p1/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": null,
+      "url": "/"
+    
+  }
+</script>
+
+
+  <meta name="google-site-verification" content="SB7EBK1J2IC4oNTmK8HHhFbkw9-m759bj5AAsdqCtkY" />
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Ali's Workspace Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML"></script>
+  
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single wide">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Ali's Workspace
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/posts/">Blogs</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">Tags</a>
+            </li><li class="masthead__menu-item">
+              <a href="/about/">About</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+  
+
+
+
+
+
+
+
+<div class="page__hero--overlay"
+  style=" background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://unsplash.com/photos/6jlYDFfyuCQ/download?force=true');"
+>
+  
+    <div class="wrapper">
+      <h1 id="page-title" class="page__title" itemprop="headline">
+        
+          Introduction to NLP in Arabic - part 1
+
+        
+      </h1>
+      
+        <p class="page__lead">نظرة عامة في مجال معالجة اللغة باستخدام خوارزميات تعلم الآلة
+</p>
+      
+      
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          18 minute read
+        
+      </span>
+    
+  </p>
+
+
+      
+      
+    </div>
+  
+  
+    <span class="page__hero-caption">Photo credit: <a href="https://unsplash.com"><strong>Unsplash</strong></a>
+</span>
+  
+</div>
+
+
+
+
+
+<div id="main" role="main">
+  
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Introduction to NLP in Arabic - part 1">
+    <meta itemprop="description" content="نظرة عامة في مجال معالجة اللغة باستخدام خوارزميات تعلم الآلة">
+    <meta itemprop="datePublished" content="2020-06-24T00:00:00+00:00">
+    
+
+    <div class="page__inner-wrap">
+      
+
+      <section class="page__content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> المحتويات</h4></header>
+              <ul class="toc__menu"><li><a href="#مقدمة">مقدمة</a></li><li><a href="#قبل-ان-تكمل">قبل ان تكمل</a></li><li><a href="#تطبيقات-معالجة-اللغة-في-حياتنا-اليومية">تطبيقات معالجة اللغة في حياتنا اليومية</a></li><li><a href="#بعض-اشهر-التطبيقات">بعض اشهر التطبيقات</a><ul><li><a href="#تحديد-نوع-النص-text-classification">تحديد نوع النص (text classification)</a></li><li><a href="#الترجمة-الآلية-neural-machine-translation---nmt">الترجمة الآلية (Neural Machine Translation - NMT)</a></li><li><a href="#استخراج-اجابة-السؤال-question-answering">استخراج اجابة السؤال (Question Answering)</a></li><li><a href="#استخراج-اسماء-الكيانات-named-entity-recognition---ner">استخراج اسماء الكيانات (Named Entity Recognition - NER)</a></li></ul></li><li><a href="#كيف-تعمل-هذه-التطبيقات">كيف تعمل هذه التطبيقات</a></li><li><a href="#تمثيل-النص-من-خلال-عدد-الكلمات-bag-of-words---bow">تمثيل النص من خلال عدد الكلمات (bag of words - bow)</a><ul><li><a href="#استخراج-مكونات-النص-tokenization">استخراج مكونات النص (Tokenization)</a></li><li><a href="#بناء-قاعدة-الكلمات-vocabulary">بناء قاعدة الكلمات (vocabulary)</a></li><li><a href="#عيوب-هذه-الطريقة">عيوب هذه الطريقة</a></li></ul></li><li><a href="#تمثيل-النص-من-خلال-معدلات-التكرار-و-الندرة-tf-idf">تمثيل النص من خلال معدلات التكرار و الندرة (TF-IDF)</a></li><li><a href="#تمثيل-النص-باستخدام-مجموعة-كلمات-n-gram">تمثيل النص باستخدام مجموعة كلمات (N-gram)</a></li><li><a href="#تمثيل-النص-باستخدام-متجهات-المعاني-word-embeddings">تمثيل النص باستخدام متجهات المعاني (word embeddings)</a><ul><li><a href="#الترميز-التقليدي-للكلمة-الواحدة-one-hot-encoding">الترميز التقليدي للكلمة الواحدة (one hot encoding)</a></li><li><a href="#متجهات-الكلمات-ذات-المعنى-word2vec">متجهات الكلمات ذات المعنى (word2vec)</a></li><li><a href="#استخدام-المتجهات-في-تطبيق-تحديد-العاطفة-في-النص">استخدام المتجهات في تطبيق تحديد العاطفة في النص</a></li><li><a href="#بعض-الملاحظات-على-تمثيل-النص-بشكل-متجهات-الكلمات-word2vecglove">بعض الملاحظات على تمثيل النص بشكل متجهات الكلمات (word2vec/glove)</a></li></ul></li><li><a href="#الاستنتاج">الاستنتاج</a></li><li><a href="#مصادر">مصادر</a></li></ul>
+
+            </nav>
+          </aside>
+        
+        <script src="https://unpkg.com/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js"></script>
+
+<script>addBackToTop({
+  diameter: 56,
+  backgroundColor: 'rgb(128, 128, 128)',
+  textColor: '#fff'
+})</script>
+
+<h2 class="text-right" id="مقدمة">مقدمة</h2>
+
+<div dir="rtl">
+في هذا المقال المكون من جزئين سوف نلقي نظرة عامة على مجال معالجة النصوص باستخدام خوارزميات تعلم الآلة وسوف نلقى الضوء على تطور المجال بداية من استخدام الطرق التقليدية في معالجة النصوص مثل استخدام اسلوب (bag of words) التي تعتمد على عدد الكلمات إلى استخدام الطرق الحديثة مثل (word embedding) و كذلك استخدام تقنيات التعلم العميق (deep learning) في تحسين اداء الانظمة الحديثة التي نستخدمها حاليا في معظم المنتجات مثل انظمة الترجمة الآلية، تصحيح النصوص و البحث و غيره من التطبيقات. 
+</div>
+
+<h2 class="text-right" id="قبل-ان-تكمل">قبل ان تكمل</h2>
+
+<div dir="rtl">
+في هذا المقال سوف نستعرض بعض الأمثلة باستخدام لغة البايثون (Python) لذا انصحك عزيزي ان لم يكن لديك خلفية عنها ان تطلع على كورس بسيط فيها و تعود لتكمل المقال، لن نقوم بالتطرق لمواضيع متقدمة للغاية في اللغة هنا لذا لابأس ان لم تقم باستخدام اللغة منذ فترة، نحتاج فقط الاساسيات هنا.
+</div>
+
+<h2 class="text-right" id="تطبيقات-معالجة-اللغة-في-حياتنا-اليومية">تطبيقات معالجة اللغة في حياتنا اليومية</h2>
+
+<div dir="rtl">
+يمكنك ان ترى تطبيقات معالجة اللغة بداية من هاتفك المحمول حيث يمكن للوحة المفاتيح ان تقترح عليك الكلمة القادمة بناءا على اسلوبك في الكتابة و كذلك بناءا على طبيعة اللغة و يتم هذا باستخدام عدة اساليب اشهرها استخدام نموذج للغة (language model)، ايضا يمكنك ان ترى جودة محركات البحث الحالية في فهم ما تريده عن طريق النص الذي تقوم بتزويد المحرك به فيمكن للمحرك ان يفهم المعنى الكامن في النص الذي قمت بإدخاله واستدعاء نتائج بحث تماثل المعنى الذي قمت بطلبه و من الآليات التي توفر لك مثل هكذا قدرات استخدام ال (word embedding) و سوف نتعرض لها في مقالنا هنا.
+</div>
+
+<div dir="rtl">
+ليس فقط على مستوى الافراد يمكننا ان نرى هذه التطبيقات ولكن ايضا على مستوى الشركات، فعلى سبيل المثال بعض الشركات تقوم بعمل تحليل للنصوص على وسائل التواصل لتوفير معلومات عن السوق وعن ما يقوله عملائك عنك على وسائل التواصل، ويوجد شركات قامت بقطع شوط كبير في هذا المجال في وطننا العربي مثل شركة <a href="https://www.crowdanalyzer.com/">crowdanalyzer</a>.
+</div>
+
+<div dir="rtl">
+ايضا تقوم بعض الشركات بتطبيق معالجة اللغة في بناءا (chat-bots) تقوم بالتواصل معك من خلال خدمة الدردشة (chat) بدلا من التحدث مع احد ممثلي خدمة العملاء، بل ان شركة جوجل قامت بعرض خدمة جديدة تستبدل ممثل خدمة العملاء كليا اذ انك تتحث مع ال (bot) بالصوت وليس فقط من خلال النص كما هو الحال مع ال (chat-bots) التقليدية.
+</div>
+
+<!-- Courtesy of embedresponsively.com //-->
+
+<div class="responsive-video-container">
+    <iframe src="https://www.youtube-nocookie.com/embed/D5VN56jQMWM" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
+  </div>
+
+<div dir="rtl">
+هذه فقط بعض الأمثلة البسيطة ولكن هناك العديد من التطبيقات في حياتنا يمكنك الإطلاع على بعضها من خلال <a href="https://towardsdatascience.com/natural-language-processing-nlp-top-10-applications-to-know-b2c80bd428cb">هذا</a> الرابط
+</div>
+<blockquote>
+
+</blockquote>
+
+<h2 class="text-right" id="بعض-اشهر-التطبيقات">بعض اشهر التطبيقات</h2>
+
+<div dir="rtl">
+في البداية دعنا نستعرض بعض التطبيقات التي نقوم باستخدام معالجة النصوص بها.
+</div>
+
+<h3 class="text-right" id="تحديد-نوع-النص-text-classification">تحديد نوع النص (text classification)</h3>
+
+<div dir="rtl">
+اشهر التطبيقات هي تحديد نوع النص من بين انواع محددة (text classification) مثل ان نقوم بتحديد ما إذا كان النص بصيغة المدح ام الذم، على سبيل المثال عند عرض مراجعات منتج معين نريد معرفة ما اذا كانت المراجعة ايجابية ام سلبية و هذا التطبيق تحديدا يسمى (sentiment analysis) و هو تحليل للمشاعر، يمكن ايضا ان تتسع الاختيارات فتشمل انواع اخرى مختلفة مثل ان نقوم بتحديد ما اذا كان الخطاب به عنف ام لا او ان نقوم بتحديد الفئة التي ينتمي اليها النص من بين مجموعة فئات كأن يكون ترفيهي او علمي او رياضي على سبيل المثال.
+</div>
+<div dir="rtl">
+فكما ترى استخدامات تحديد النص كثيرة للغاية و منتشرة بشكل كبير جدا و غالبا ما تجد المصادر التعليمية تهتم بها في بداية تعلمك لمجال معالجة اللغة لاهميتها وكذلك سهولة فهمها وتطبيقها.
+</div>
+
+<p><img src="https://1.bp.blogspot.com/-zozGrHwAv9A/WNp86wRiPXI/AAAAAAAAC2M/KUsRp9NEKv8QWhdq2YIXNkkkv02IetiUwCLcB/s1600/sentiment.png" alt="text-classification" class="align-center" /></p>
+<center><a href="https://blog.vicz.in/2017/03/what-is-sentiment-analysis.html">المصدر</a></center>
+
+<h3 class="text-right" id="الترجمة-الآلية-neural-machine-translation---nmt">الترجمة الآلية (Neural Machine Translation - NMT)</h3>
+
+<div dir="rtl">
+احد اشهر التطبيقات التي نستخدمها هي الترجمة الآلية (Neural Machine Translation - NMT) و هي تشرح نفسها إلى حدا كبير، هي ان تقوم الآلة من تلقاء نفسها بترجمة النص بشكل اوتوماتيكي، كما ترى في خدمة <a hre="https://translate.google.com/">ترجمة جوجل</a> على سبيل المثال.
+</div>
+
+<p><img src="/assets/images/intro-to-nlp-p1/nmt-google.png" alt="nmt-google" class="align-center" /></p>
+<center><a href="www.google.com">المصدر</a></center>
+
+<h3 class="text-right" id="استخراج-اجابة-السؤال-question-answering">استخراج اجابة السؤال (Question Answering)</h3>
+
+<div dir="rtl">
+من اشهر التطبيقات ايضا تطبيق الإجابة على الاسئلة واستخراج الإجابة من النص (Question Answering) وفي هنا يكون هدف البرنامج هو استخراج إجابة سؤال معطى من المستخدم من خلال قطعة نصية كما يقوم محرك البحث بإستخراج الإجابة عن سؤالك الذي قمت بكتابته في محرك البحث !
+</div>
+
+<p><img src="/assets/images/intro-to-nlp-p1/qa-nile.png" alt="qa-nile" class="align-center" /></p>
+<center><a href="www.google.com">المصدر</a></center>
+
+<h3 class="text-right" id="استخراج-اسماء-الكيانات-named-entity-recognition---ner">استخراج اسماء الكيانات (Named Entity Recognition - NER)</h3>
+
+<div dir="rtl">
+ايضا من التطبيقات التي يجب ذكرها هو استخراج اسماء الكيانات (Named Entity Recognition - NER) و هنا نقوم باستخراج من النص الاسماء التي تدل على مؤسسات مثلا، عملات او حتى اسماء لاشخاص.
+</div>
+
+<p><img src="/assets/images/intro-to-nlp-p1/ner-mawdoo3.png" alt="ner-mawdoo3" class="align-center" /></p>
+<center><a href="https://ai.mawdoo3.com/mixed">المصدر</a></center>
+
+<div dir="rtl">
+هذه فقط بعض التطبيقات و يوجد تطبيقات اخرى مهمة مثل تلخيص النصوص (text summarization) و استخراج الكلمات التي تشير لنفس الكيان (Coreference Resolution) وايضا تحويل النصوص إلى صوت (text to speech - TTS) و العديد من التطبيقات الأخرى، يمكنك الإطلاع عليهم وعلى احدث ما توصل إليه العلم في هذه المجالات من خلال <a href="http://nlpprogress.com/">هذا الرابط</a>.
+</div>
+
+<h2 class="text-right" id="كيف-تعمل-هذه-التطبيقات">كيف تعمل هذه التطبيقات</h2>
+
+<div dir="rtl">
+معالجة النصوص تتم بأكثر من طريقة في الحقيقة، بعض الطرق يكون بسيط للغاية ولكنه ذكي إلى حد كبير إذ يعتمد بشكل اساسي على قواعد مسبقة لدى البرنامج ويقوم بتنفيذها، تطبيق بسيط للغاية لهكذا تطبيق يمكن ان يكون في الشات بوت مثلا لرد التحية.
+</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">random</span>
+<span class="n">replies</span> <span class="o">=</span> <span class="p">[</span> <span class="s">'hi my name is bot !'</span><span class="p">,</span>
+            <span class="s">'morning how can i help ?'</span><span class="p">,</span>
+            <span class="s">'What can i help you with sir ?'</span><span class="p">]</span>
+
+<span class="n">user_input</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">"please enter a message"</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">user_input</span> <span class="ow">in</span> <span class="p">[</span><span class="s">'hello'</span><span class="p">,</span> <span class="s">'welcome'</span><span class="p">,</span> <span class="s">'hi'</span><span class="p">,</span> <span class="s">'aloha'</span><span class="p">]:</span>
+  <span class="k">print</span><span class="p">(</span><span class="n">random</span><span class="p">.</span><span class="n">choice</span><span class="p">(</span><span class="n">replies</span><span class="p">))</span>
+</code></pre></div></div>
+
+<div dir="rtl">
+هنا يمكنك ان ترى بوضوح ان في حالة ادخال المستخدم نص مختلف عن الذي كنت تتوقعه فلن يفهم البرنامج ما قام المستخدم بقوله، ولهذا تعتمد طريقة ال (Rule Based) على ان يقوم كاتبها بتغطية تقريبا كل الحالات التي يمكن ان يقولها المستخدم، وقد اعتادت هذه الطريقة ان تستخد في السابق و لازالت تستخدم حتى الآن منفردة في بعض التطبيقات المحدودة و ايضا تستخدم بجانب استخدام تعلم الآلة لتغطية بعض الحالات التي لدينا معرفة مسبقة عنها.
+</div>
+
+<div dir="rtl">
+و يمكننا معالجة النص باستخدام طريقة التعلم من خلال البيانات، وهذه الطريقة هي الاكثر استخداما حاليا وتشهد تطور كبير بالتبعية لتطور تطبيقات تعلم الآلة (machine learning) و تطبيقات التعلم العميق (deep learning)، وهذه الطريقة هي التي سنقوم بتغطيتها بشئ من التفاصيل في هذا المقال.
+</div>
+
+<div dir="rtl">
+ما سبق من التطبيقات تعتمد على تمثيل النصوص بشكل ما يسمح بمعالجتها بشكل سريع و ذو كفاءة عالية، و تختلف طريقة تمثيل النصوص من تطبيق لآخر لذا في هذا الجزء من المقال سوف نقوم بالتركيز على تمثيل النص بالنسبة لتطبيق تحديد النص (text classification) لسهولته كما ذكرنا من قبل.
+</div>
+
+<div dir="rtl">
+ربما تتذكر من <a href="https://aliabdelaal.github.io/blog/intro-to-ml/#%D8%A7%D9%84%D9%86%D8%B2%D9%88%D9%84-%D8%A7%D9%84%D8%AA%D8%AF%D8%B1%D9%8A%D8%AC%D9%8A-gradient-descent">مقالنا السابق</a> عن تعلم الآلة كيفية عمل النزول التدريجي (gradient descent) وكيف انه يقوم بتحديد اوزان لمجموعة متغيرات ثم نقوم بتقدير هذه الاوزان عن طريق حساب مدى الخطأ، يمكنك الرجوع إلى المقال لاسترجاع هذه المعلومة.
+</div>
+
+<p><img src="/assets/images/intro-to-ml/formula-2.png" alt="model-formulation" class="align-center" /></p>
+<center><a href="https://aliabdelaal.github.io/blog/intro-to-ml/#%D8%A7%D9%84%D9%86%D8%B2%D9%88%D9%84-%D8%A7%D9%84%D8%AA%D8%AF%D8%B1%D9%8A%D8%AC%D9%8A-gradient-descent">قراءة المقال</a></center>
+
+<div dir="rtl">
+اذا يجب ان نقوم بإستخراج خصائص لهذا النص تقوم بتوصيفه وتمييزه عن باقي النصوص، ابسط انواع الخصائص التي يمكننا استخراجها من النص هي الكلمات، فدعنا نرى كيف نستخرج الكلمات كخصائص للنص.
+</div>
+
+<h2 class="text-right" id="تمثيل-النص-من-خلال-عدد-الكلمات-bag-of-words---bow">تمثيل النص من خلال عدد الكلمات (bag of words - bow)</h2>
+
+<h3 class="text-right" id="استخراج-مكونات-النص-tokenization">استخراج مكونات النص (Tokenization)</h3>
+
+<div dir="rtl">
+ يجب التركيز على نقطة مهمة قبل البدأ في استخراج الخصائص من النص و هي تعريف الكلمة، اذ ان تعريف الكلمة مؤخرا اختلف من طريقة لأخرى، لنكون دقيقين اكثر ما هو تعريف الوحدة النصية (token) في النص الذي نعمل عليه، اذا كانت كلمة فيمكن ان تكون كلمة (يحبه) و (احبه) و (تحبه) كلمات مختلفة تمام عن بعضهم البعض، بينما بعض الطرق تقوم بتفكيك الكلمة و جعلها (ي + حب + ه) و (ا + حب + ه) يمكنك ان ترى ما يحدث هنا، نحن نقوم بتفصيل النص و استخراج مكوناته، هذه العملية مهمة اذ انها الاساس لما هو قادم لان كل وحدة (token) ستعتبر خاصية من خصائص النص، اذا فمثالنا السابق عن الحب بدلا من تصبح (يحبه) صفة من صفات النص ستصبح (ي) و (حب) و (ه) من خصائص النص و هكذا عند استخدام اشكال مختلفة من الفعل ستدري ان الأصل حب.
+</div>
+
+<div dir="rtl">
+لاحظ ان هذه الطريقة لا تقوم باستخراج اساس الكلمة و هي لاتدري ان حب بالضرورة كلمة صحيحة هي تعمل على اساس معين و خطوات معينة يمكنك الإطلاع عليه من خلال <a href="https://mlexplained.com/2019/11/06/a-deep-dive-into-the-wonderful-world-of-preprocessing-in-nlp/">هذا الرابط</a>.
+</div>
+
+<h3 class="text-right" id="بناء-قاعدة-الكلمات-vocabulary">بناء قاعدة الكلمات (vocabulary)</h3>
+
+<div dir="rtl">
+سوف نعتمد في البداية على طريقة التقسيم على اساس المسافات اي ان الوحدة النصية ستصبح الكلمة التي تأتي بعدها مسافة، لنستطيع تمثيل النصوص باستخدام هذه الخصائص يجب علينا في البداية ان نقوم بتحديد الصفات التي سوف نقوم بتوصيف النص على اساسها، في هذه الحالة الصفات هي الكلمات اذا لنقم بتحديد كل الكلمات التي يمكننا ان نصف النص بناءا عليها و سوف نسميها قاعدة الكلمات (Vocabulary) او القاموس الخاص بالنموذج الخاص بنا.
+</div>
+
+<div dir="rtl">
+دعنا نرى مثال باستخدام مكتبة sklearn في لغة البايثون.
+</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">sklearn.feature_extraction.text</span> <span class="kn">import</span> <span class="n">CountVectorizer</span>
+
+<span class="n">text</span> <span class="o">=</span><span class="p">[</span>
+    <span class="s">"مرحبا"</span><span class="p">,</span>
+    <span class="s">"اهلا يا صديقي"</span><span class="p">,</span>
+    <span class="s">"كيف حالك يا صديقي"</span><span class="p">,</span>
+    <span class="s">"مرحبا صديقي"</span>
+<span class="p">]</span>
+
+<span class="n">vectorizer</span> <span class="o">=</span> <span class="n">CountVectorizer</span><span class="p">()</span>
+<span class="n">vectorizer</span><span class="p">.</span><span class="n">fit</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><img src="/assets/images/intro-to-nlp-p1/count-vectorizer.png" alt="count-vectorizer" class="align-center" /></p>
+
+<div dir="rtl">
+كما ترى هنا قاعدة الكلمات الخاصة بنا هي الكلمات المميزة في جميع النصوص و يتم توصيف النص من خلال عدد الكلمات التي تظهر به، فعلى سبيل المثال يمكن ان نرى هنا ان النص "مرحبا يا صديقي" يتم تمثيله بالارقام
+</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+</code></pre></div></div>
+
+<div dir="rtl">
+تعد هذه الطريقة الابسط في تمثيل النصوص و يمكن استخدامها كممثل للنص كما نرى و في المثال القادم نقوم بعمل نموذج بسيط باستخدام sklearn مرة اخرى يقوم بتحديد المشاعر في النص (sentiment analysis) على بعض التغريدات <a href="https://www.kaggle.com/mksaad/arabic-sentiment-twitter-corpus">من موقع تويتر</a>
+</div>
+
+<div dir="rtl">
+تتوفر البيانات على شكل ملفيين احدهم يحتوى على التغريدات الإيجابية و الاخر على السلبية لذا سنقوم بتجميعهم و استخراج الخصائص منهم.
+</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># read the data
+</span><span class="n">pos_reviews</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s">"train_Arabic_tweets_positive_20190413.tsv"</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s">'</span><span class="se">\t</span><span class="s">'</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
+<span class="n">neg_reviews</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s">"train_Arabic_tweets_negative_20190413.tsv"</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s">'</span><span class="se">\t</span><span class="s">'</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">concat</span><span class="p">([</span><span class="n">pos_reviews</span><span class="p">,</span> <span class="n">neg_reviews</span><span class="p">])</span>
+<span class="n">dataset</span><span class="p">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s">'sentiment'</span><span class="p">,</span> <span class="s">'text'</span><span class="p">]</span>
+<span class="n">dataset</span><span class="p">.</span><span class="n">head</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p><img src="/assets/images/intro-to-nlp-p1/sentiment-head.png" alt="data-head" class="align-center" /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">dataset</span><span class="p">[</span><span class="s">'sentiment'</span><span class="p">].</span><span class="n">value_counts</span><span class="p">()</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">pos</span>    <span class="mi">22761</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">neg</span>    <span class="mi">22514</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">Name</span><span class="p">:</span> <span class="n">sentiment</span><span class="p">,</span> <span class="n">dtype</span><span class="p">:</span> <span class="n">int64</span>
+</code></pre></div></div>
+
+<div dir="rtl">
+هنا نرى ان البيانات متوازنة بشكل كبير اذ ان عدد التغريدات الإيجابية قريب جدا من السلبية، والان سوف نقوم بتقسيم البيانات إلى جزء للتعلم و جزء للاختبار (train test split)
+</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+
+<span class="n">x_train</span><span class="p">,</span> <span class="n">x_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">dataset</span><span class="p">[</span><span class="s">'text'</span><span class="p">],</span> <span class="n">dataset</span><span class="p">[</span><span class="s">'sentiment'</span><span class="p">],</span> <span class="n">test_size</span><span class="o">=</span><span class="p">.</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">x_train</span><span class="p">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">x_test</span><span class="p">.</span><span class="n">shape</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="p">((</span><span class="mi">36220</span><span class="p">,),</span> <span class="p">(</span><span class="mi">9055</span><span class="p">,))</span>
+</code></pre></div></div>
+
+<div dir="rtl">
+والان يمكننا ان نقوم بتكوين قاعدة الكلمات و نرى جزء منها.
+</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">vectorizer</span> <span class="o">=</span> <span class="n">CountVectorizer</span><span class="p">(</span><span class="n">max_features</span><span class="o">=</span><span class="mi">1500</span><span class="p">)</span>
+<span class="n">vectorizer</span><span class="p">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x_train</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div dir="rtl">
+هنا قمنا بتحديد عدد اقصى للخصائص التي يمكن تجميعها للحفاظ على الذاكرة و كذلك لتبسيط المثال ولكن في المتوسط تطبيقات اللغة تحتوى على كلمات اكثر بكثير.
+</div>
+
+<p><img src="/assets/images/intro-to-nlp-p1/ar-sentiment.png" alt="ar-sentiment" class="align-center" /></p>
+
+<div dir="rtl">
+يجب ان نقوم بتحويل النص إلى ارقام كما قمنا من قبل لنستطيع استخدام نموذج تعلم آلة (machine learning) على البيانات.
+</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x_train_v</span> <span class="o">=</span> <span class="n">vectorizer</span><span class="p">.</span><span class="n">transform</span><span class="p">(</span><span class="n">x_train</span><span class="p">)</span>
+<span class="n">x_test_v</span> <span class="o">=</span> <span class="n">vectorizer</span><span class="p">.</span><span class="n">transform</span><span class="p">(</span><span class="n">x_test</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div dir="rtl">
+الآن يمكننا ان نقوم بتدريب نموذج بسيط مثل (Logistic Regression) و هو نموذج يستخدم في التحديد والاختيار (Classification).
+</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LogisticRegression</span>
+
+<span class="n">clf</span> <span class="o">=</span> <span class="n">LogisticRegression</span><span class="p">()</span>
+<span class="n">clf</span><span class="p">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x_train_v</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div dir="rtl">
+والان يمكننا قياس جودة النموذج عن طريق مدى دقته على البيانات التي لم يراها من قبل
+</div>
+
+<div dir="rtl" class="notice--info">
+(لاحظ ان هناك طرق اخرى لقياس مدى جودة النموذج مثل ال recall او التغطية و كذلك قياس ال f1-score وهي طريقة تجمع بين ال precision (الدقة في حالة الإختيار/ classification) و ال recall/التغطية )
+</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">clf</span><span class="p">.</span><span class="n">score</span><span class="p">(</span><span class="n">x_test_v</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mf">0.7168415240198786</span>
+</code></pre></div></div>
+
+<h3 class="text-right" id="عيوب-هذه-الطريقة">عيوب هذه الطريقة</h3>
+
+<div dir="rtl">
+يمكنك ان ترى ان قاعدة الكلمات تحتوي على كلمات كثيرة مثل (في، إلا، على، وهكذا) و هذه الكلمات تسمى كلمات وقف (stopwords) فهي لاتضيف كثيرا للمعنى وانما تستخدم لترتيب و تشكيل اللجملة فهذه الكلمات تأخذ مساحة كبيرة من الكلمات ولكنها ليست ذات اهمية كبيرة.
+</div>
+
+<div dir="rtl">
+ايضا يمكننا ان نرى ان عدد الكلمات يمكن ان يزيد بشكل كبير جدا لان الوحدة الاساسية (token) بالاساس تستخرج على اساس المسافة و كما وضحنا سابقا فان هناك طرق افضل في استخراج الكلمات (tokenization) هذه الطرق تساهم بشكل كبير في تقليل المساحة المستخدمة.
+</div>
+
+<div dir="rtl">
+ايضا من المشاكل التي يمكنك ملاحظتها هي ان الترتيب لا يعتد به على الإطلاق، اذ ان الجملتين الاتيتين لهما تقريبا نفس التمثيل.
+</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">reviews</span> <span class="o">=</span> <span class="p">[</span> <span class="s">"انا احب هذا المنتج كثيرا لا يوجد لدي اي شكوى"</span><span class="p">,</span>
+            <span class="s">"انا لا احب هذا المنتج على الإطلاق لدى مليون شكوى"</span><span class="p">]</span>
+</code></pre></div></div>
+
+<p><img src="/assets/images/intro-to-nlp-p1/bow-order-issue.png" alt="bow-order-issue" class="align-center" /></p>
+
+<div dir="rtl">
+فعلى الرغم من اختلافهم كليا الا ان هذه الطريقة لا تعتد بالترتيب لانه لايوجد ما يخبر البرنامج ان كلمة (احب) قد سبقها (لا)، لذا يجب ان نوجد حل لهذه المشكلة ايضا.
+</div>
+
+<div dir="rtl">
+من عيوب هذه الطريقة ايضا انها لا تعطي اي مؤشر للكلمات المتشابهة، بمعنى ان كلمة (عشق) و كلمة (حب) لا يوجد اي دلالة على تشابهما بينما ان امكنا تحصيل معلومة كهذه فقد تفيدنا جدا.
+</div>
+
+<div dir="rtl">
+ايضا ماذا إن ادخل المستخدم كلمة جديدة لم يراها النموذج اثناء التدريب، حينها سيتجاهلها النموذج بالكلية لانها لا تعتبر من الخصائص/القاموس الخاص بالنموذج.
+</div>
+
+<div dir="rtl">
+يمكنك ان ترى ان هناك العديد من المشاكل ولكن لاتقلق هناك حلول لهذه المشاكل كما سنرى فيما يلي.
+</div>
+
+<h2 class="text-right" id="تمثيل-النص-من-خلال-معدلات-التكرار-و-الندرة-tf-idf">تمثيل النص من خلال معدلات التكرار و الندرة (TF-IDF)</h2>
+
+<p><img src="http://3.bp.blogspot.com/-u928a3xbrsw/UukmRVX_JzI/AAAAAAAAAKE/wIhuNmdQb7E/s1600/td-idf-graphic.png" alt="tf-idf" class="align-center" /></p>
+<center><a href="http://filotechnologia.blogspot.com/2014/01/a-simple-java-class-for-tfidf-scoring.html">المصدر</a></center>
+
+<div dir="rtl">
+هناك طريقة اخرى و هي تعديل بسيط على الطريقة السابقة لحل مشكلة الكلمات التي ليس لها اهمية كبيرة وهي عن طريق حساب معدل تكرارها في النص المستخدم و كذلك كل النصوص المتاحة، اذ ان الكلمة المستخدمة بكثرة في جميع النصوص فهي ليست مهمة بالضرورة مثل الكلمات الاقل ظهورا.
+</div>
+
+<div dir="rtl">
+تقوم الطريقة بالاساس بتعيين قيمة لكل كلمة تعبر عن اهميتها و كلما زادت اهمية الكلمة كلما زادت القيمة.
+</div>
+
+\[W_x = tf_x \times \log(\frac{N}{df_x})\]
+
+<div dir="rtl">
+تقوم المعادلة بالأساس عن طريق حساب معدل تكرار الكلمة في النص الحالي (term frequency - tf) و كذلك حساب عدد النصوص التي ظهرت بها هذه الكلمة (document frequency - df) دعنا نستعرض مثال لكلمة مستخدمة كثيرا مثل حرف الجر (في) سوف نجد انها تقريبا سوف تظهر في كل النصوص وبهذا سوف تكون قيمة ال (df) كبيرة و قريبة جدا من (N) و هو عدد النصوص المتاحة اذا ستكون محصلة العملية log(N/df) قريبة من 0 لان كلما زادت قيمة df كلما نقصت قيمة الكسر و بالتبعية قيمة اللوغاريتم على عكس لو نقصت قيمة ال df كلما زادت قيمة الكسر و كذلك تزداد قيمة اللوغاريتم، الذي يرمز له غالبا بالقيمة (inverse document frequency - idf).
+</div>
+
+<div dir="rtl">
+هنا يمكن ان نرى مثال على استخدام tfidf على جزء من البيانات
+</div>
+
+<p><img src="/assets/images/intro-to-nlp-p1/tfidf-vectorizer.png" alt="tfidf-vectorizer" class="align-center" /></p>
+
+<div dir="rtl">
+كما ترى فإن لكل كلمة قيمة ناتجة من حساب معدل التكرار وليس مجرد عددها كما كان في السابق.
+</div>
+
+<div dir="rtl">
+يمكننا تغير سطر واحد فقط في البرنامج السابق لاستخدام معدل التكرار (tf-idf) بدلا من العدد فقط (count vectorizer).
+</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">sklearn.feature_extraction.text</span> <span class="kn">import</span> <span class="n">TfidfVectorizer</span>
+
+<span class="n">vectorizer</span> <span class="o">=</span> <span class="n">TfidfVectorizer</span><span class="p">()</span>
+<span class="n">vectorizer</span><span class="p">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x_train</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div dir="rtl">
+سوف نلاحظ زيادة طفيفة في جودة توقعاتنا ولكن سوف تظل مشاكل اخرى قائمة مثل ان (لا احب) يتم قراءتها على انها (لا) و (احب) و في هذا الإطار نرى ان كلمة احب بالتأكيد تدل على رأي إيجابي لذلك غالبا سوف يتوقع نموذجنا ان النص ايجابي، وسوف نقوم باستعراض طريقة يمكنها حل هذه المشكلة بنسبة جيدة.
+</div>
+
+<h2 class="text-right" id="تمثيل-النص-باستخدام-مجموعة-كلمات-n-gram">تمثيل النص باستخدام مجموعة كلمات (N-gram)</h2>
+
+<p><img src="https://vitalflux.com/wp-content/uploads/2018/02/Ngram-language-model-explained-with-examples.png" alt="ngram" class="align-center" /></p>
+<center><a href="https://vitalflux.com/n-gram-language-models-explained-examples/">المصدر</a></center>
+
+<div dir="rtl">
+لمعالجة مشكلة مثل (لا احب) وايضا الكلمات المركبة بشكل عام مثل (أبو بكر) وايضا (حسبي الله ونعم الوكيل) على سبيل المثال نحتاج لان ننظر ليس فقط لكلمة واحدة وانما ننظر إلى عدة كلمات متتالية مرة واحدة، وهذه هي طريقة ال (ngrams) التي تعتمد على وجود نافذة بحجم معين (مثلا كلمتين) ونختار كل كلمتين متتاليتين ليصبحوا وحدة نصية (token)، اذا كانت النافذة ذات حجم 3 يصبح مسماهم (trigrams) و هكذا.
+</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">text</span> <span class="o">=</span><span class="p">[</span>
+    <span class="s">"مرحبا"</span><span class="p">,</span>
+    <span class="s">"اهلا يا صديقي"</span><span class="p">,</span>
+    <span class="s">"كيف حالك يا صديقي"</span><span class="p">,</span>
+    <span class="s">"مرحبا صديقي"</span>
+<span class="p">]</span>
+
+<span class="c1"># bigram example
+</span><span class="n">vectorizer</span> <span class="o">=</span> <span class="n">CountVectorizer</span><span class="p">(</span><span class="n">ngram_range</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+<span class="n">vectorizer</span><span class="p">.</span><span class="n">fit</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><img src="/assets/images/intro-to-nlp-p1/bigrams.png" alt="bigrams" class="align-center" /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">text</span> <span class="o">=</span><span class="p">[</span>
+    <span class="s">"مرحبا"</span><span class="p">,</span>
+    <span class="s">"اهلا يا صديقي"</span><span class="p">,</span>
+    <span class="s">"كيف حالك يا صديقي"</span><span class="p">,</span>
+    <span class="s">"مرحبا صديقي"</span>
+<span class="p">]</span>
+
+<span class="c1"># trigram example
+</span><span class="n">vectorizer</span> <span class="o">=</span> <span class="n">CountVectorizer</span><span class="p">(</span><span class="n">ngram_range</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<span class="n">vectorizer</span><span class="p">.</span><span class="n">fit</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><img src="/assets/images/intro-to-nlp-p1/trigrams.png" alt="trigrams" class="align-center" /></p>
+
+<div dir="rtl">
+استخدام مجموعات الكلمات (ngram) سوف يحسن اداء النموذج الخاص بك لانه يوفر للنموذج نافذة اكبر يستطيع النظر من خلالها للنص ولكنه يزيد من عدد الخصائص بشكل كبير كما ترى و ايضا مازالت هناك بعض المشاكل التي لم نقم بحلها بعد مثل الترتيب وكذلك مدى تشابه الكلمات ذات المعاني المتقاربة.
+</div>
+
+<h2 class="text-right" id="تمثيل-النص-باستخدام-متجهات-المعاني-word-embeddings">تمثيل النص باستخدام متجهات المعاني (word embeddings)</h2>
+
+<div dir="rtl">
+حتى الآن كان تمثيلنا للنص مقتصر على شكل مجموعة ارقام تمثل النص ككل، ولكن الآن نريد عمل تمثيل للكلمة الواحدة في شكل متجه (vector) والذي سوف يكون مفيد في استخدامات كثيرة خاصة في مجالات التعلم العميق (deep learning) فدعنا نرى بعض اشهر الطرق في تمثيل النص على شكل متجه.
+</div>
+
+<h3 class="text-right" id="الترميز-التقليدي-للكلمة-الواحدة-one-hot-encoding">الترميز التقليدي للكلمة الواحدة (one hot encoding)</h3>
+
+<div dir="rtl">
+في هذه الطريقة سوف نقوم بتحديد رقم لكل كلمة من الكلمات المميزة التي لدينا ثم نقوم بتمثيل كل كلمة على شكل متجه طوله عدد الكلمات المميزة لدينا و قيمته صفر في جميع الاماكن ماعدا إحداثي الكلمة، يمكنك ان ترى بشكل اوضح في المثال الآتي.
+</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">defaultdict</span>
+
+<span class="n">text</span> <span class="o">=</span> <span class="s">"مرحبا هلا يا صديقي كيف حالك يا صديقي مرحبا صديقي"</span>
+
+<span class="n">text2idx</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="k">lambda</span><span class="p">:</span> <span class="mi">0</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">word</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">text</span><span class="p">.</span><span class="n">split</span><span class="p">()),</span> <span class="mi">1</span><span class="p">):</span>
+    <span class="n">text2idx</span><span class="p">[</span><span class="n">word</span><span class="p">]</span> <span class="o">=</span> <span class="n">i</span>
+
+<span class="n">text2idx</span><span class="p">[</span><span class="s">'مرحبا'</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mi">5</span>
+</code></pre></div></div>
+
+<div dir="rtl">
+هنا قمنا ببناء المتغير <code>text2idx</code> حيث يحتوي على كل كلمة والرقم المقابل لها و استخدمنا هنا <code>defaultdict</code> حتى نحصل على قيمة 0 عندما نستخدمه مع كلمات جديدة، الآن دعنا نستخدم ما قمنا بعمله لتكوين المتجه المعبر عن الكلمة.
+</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="n">word</span> <span class="o">=</span> <span class="s">'مرحبا'</span>
+
+<span class="n">word_vector</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">zeros</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">text2idx</span><span class="p">.</span><span class="n">keys</span><span class="p">())))</span>
+<span class="n">word_vector</span><span class="p">[</span><span class="n">text2idx</span><span class="p">[</span><span class="n">word</span><span class="p">]]</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="n">word_vector</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">array</span><span class="p">([</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">])</span>
+</code></pre></div></div>
+
+<div dir="rtl">
+كما ترى هنا قمنا بعمل متجه فارغ بحجم مجموع الكلمات التي لدينا و من ثم قمنا بتغير قيمة احداثي هذه الكلمة فقط ليصبح قيمته 1 و اذا استخدمناه مع كلمة جديدة سوف نحصل على تمثيل مثل ما يلي.
+</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">word</span> <span class="o">=</span> <span class="s">'مصر'</span>
+
+<span class="n">word_vector</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">zeros</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">text2idx</span><span class="p">.</span><span class="n">keys</span><span class="p">())))</span>
+<span class="n">word_vector</span><span class="p">[</span><span class="n">text2idx</span><span class="p">[</span><span class="n">word</span><span class="p">]]</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="n">word_vector</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">array</span><span class="p">([</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">])</span>
+</code></pre></div></div>
+
+<div dir="rtl">
+الكلمات التي لم نراها من قبل والتي لم تكن متواجدة في البيانات التي تمرنا عليها سوف تحصل على متجه يحتوي على 1 في الخانة الاولى التي خصصناها للكلمات الخارجة عن القاموس الخاص بنا (Out of Vocab).
+</div>
+
+<div dir="rtl">
+تمثيل النصوص بهذه الطريقة مهم للغاية حيث انه يتم استخدامه في الطرق الحديثة كما سنرى لاحقا. ولكن كما ترى فهو لا يحتوي على اي معلومة عن الكلمة ماعدا رقم الكلمة في قاموس كلماتنا و هذه ليست معلومة يمكننا من خلالها استخراج معاني مفيدة عن التشابه بين الكلمات و معانيها.
+</div>
+
+<h3 class="text-right" id="متجهات-الكلمات-ذات-المعنى-word2vec">متجهات الكلمات ذات المعنى (word2vec)</h3>
+
+<div dir="rtl">
+تخيل ان تقوم بعمل عملية حسابية على الكلمات كالمثال الآتي.
+</div>
+
+<p class="text-center">القاهرة - مصر + فرنسا ~= باريس</p>
+
+<div dir="rtl">
+في هذه المعادلة نقوم باستخراج باريس بناءا على العلاقة بين مصر و القاهرة اذ ما تقوله المعادلة هو العلاقة بين القاهرة و مصر كالعلاقة بين فرنسا و ماذا ؟ بالطبع يمكنك ان تتخيل ان الإجابة باريس عاصمة فرنسا، ولكن كيف يمكننا تطبيق هذه المعادلة بالفعل اذ يقوم البرنامج بالإجابة عوضا عنا بباريس؟
+</div>
+
+<div dir="rtl">
+في <a href="https://papers.nips.cc/paper/5021-distributed-representations-of-words-and-phrases-and-their-compositionality.pdf">ورقتهم العلمية</a> توماس ميكولوف وزملائه قامو بإقتراح نموذج صياغة للكلمات على شكل متجه بحيث يحتوي المتجه على معلومات عن الكلمة، والكلمات التي تظهر مع نفس المحيط من الكلمات سوف تحصل على متجهات متشابهة، لن نتطرق لتفاصيل عمل النموذج في الوقت الحالي لكن يمكنك الإطلاع عليه من خلال <a href="http://jalammar.github.io/illustrated-word2vec/"> هذا المقال</a> الرائع لكن دعنا نرى كيفية استخدام هذا النموذج و كيف يمكنه ان يفيدنا في عملية معالجة النصوص من خلال مكتبة <a href="https://spacy.io/">spaCy</a>.
+</div>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$pip</span> <span class="nb">install </span>spacy
+<span class="nv">$python</span> <span class="nt">-m</span> spacy download en_core_web_md
+</code></pre></div></div>
+
+<div dir="rtl">
+الآن قمنا بتحميل المكتبة والملفات التي نحتاجها لتوليد متجهات الكلمات، لنرى كيف يمكننا استخدامها.
+</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">spacy</span>
+<span class="n">nlp</span> <span class="o">=</span> <span class="n">spacy</span><span class="p">.</span><span class="n">load</span><span class="p">(</span><span class="s">"en_core_web_md"</span><span class="p">)</span>
+
+<span class="n">cat</span> <span class="o">=</span> <span class="n">nlp</span><span class="p">(</span><span class="s">"cat"</span><span class="p">)</span>
+<span class="n">cat</span><span class="p">.</span><span class="n">vector</span><span class="p">[:</span><span class="mi">10</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mf">0.15067</span> <span class="p">,</span> <span class="o">-</span><span class="mf">0.024468</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.23368</span> <span class="p">,</span> <span class="o">-</span><span class="mf">0.23378</span> <span class="p">,</span> <span class="o">-</span><span class="mf">0.18382</span> <span class="p">,</span>  <span class="mf">0.32711</span> <span class="p">,</span>
+<span class="o">&gt;&gt;&gt;</span>       <span class="o">-</span><span class="mf">0.22084</span> <span class="p">,</span> <span class="o">-</span><span class="mf">0.28777</span> <span class="p">,</span>  <span class="mf">0.12759</span> <span class="p">,</span>  <span class="mf">1.1656</span>  <span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">float32</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div dir="rtl">
+حصلنا الآن على المتجه الخاص بكلمة قطة، المتجه يحتوي على 300 رقم ولكن استعرضنا فقط اول 10 منهم، الآن دعنا نحصل على متجهيين اخريين.
+</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">dog</span> <span class="o">=</span> <span class="n">nlp</span><span class="p">(</span><span class="s">"dog"</span><span class="p">)</span>
+<span class="n">car</span> <span class="o">=</span> <span class="n">nlp</span><span class="p">(</span><span class="s">"car"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div dir="rtl">
+لاحظ الآن كيف يمكننا مقارنة الكلمات.
+</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">cat</span><span class="p">.</span><span class="n">similarity</span><span class="p">(</span><span class="n">car</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mf">0.3190752856973872</span>
+
+<span class="n">cat</span><span class="p">.</span><span class="n">similarity</span><span class="p">(</span><span class="n">dog</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mf">0.8016854705531046</span>
+</code></pre></div></div>
+
+<div dir="rtl">
+كما ترى على الرغم من تشابه كلمة (cat) و (car) من حيث الأحرف، إلا ان التشابه بينهم ضعيف جدا مقارنة بالتشابه بين (cat) و (dog) هذا لان المعنى اقرب بالطبع، فكما ترى ان متجهات الكلمات تتضمن المعاني بداخلها و بالطبع المعاني المتضمنة داخل المتجهات تأتي بعد تدريب معين لن يسعنى تغطيته في الوقت الحالي لكن يمكنك الإطلاع على الورقة البحثية التي اشرنا إليها.
+</div>
+
+<div dir="rtl" class="notice--info">
+تتم حساب نسبة التشابه بين المتجهات على اساس جيب الزاوية (cosine) بينهم، يمكنك الإطلاع على طريقة حسابها من <a href="https://deepai.org/machine-learning-glossary-and-terms/cosine-similarity">هنا</a>
+</div>
+
+<div dir="rtl" class="notice--info">
+لاحظ ان مكتبة <code>spaCy</code> تستخدم نموذج مختلف قليلا عن الذي اشرنا إليه في الورقة البحثية لكنه يقوم بنفس الوظيفة بشكل افضل قليلا، يمكنك الإطلاع عليه من خلال الورقة البحثية الخاصة به من <a href="https://nlp.stanford.edu/pubs/glove.pdf">هذا الرابط</a>
+</div>
+
+<h3 class="text-right" id="استخدام-المتجهات-في-تطبيق-تحديد-العاطفة-في-النص">استخدام المتجهات في تطبيق تحديد العاطفة في النص</h3>
+
+<div dir="rtl">
+لنقوم باستخدام المتجهات مع نماذجنا يجب علينا ان نعيد تمثيل النص على هيئة متجهات، ولكن نحن نحصل على متجه لكل كلمة فكيف نحصل على متجه للنص الكامل ؟
+</div>
+
+<div dir="rtl">
+احد اشهر الطرق هي ان نقوم باستخدام مجموع المتجهات الخاصة بكل كلمة لتصبح المتجه الممثل للنص بكامله، هناك طرق اخرى سوف نتحدث عناه لاحقا ولكن الآن سوف نستخدم هذه الطريقة.
+</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">text</span> <span class="o">=</span> <span class="s">"this is a simple text"</span>
+<span class="n">vector</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">300</span><span class="p">,))</span>
+
+<span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">nlp</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+    <span class="n">vector</span> <span class="o">+=</span> <span class="n">word</span><span class="p">.</span><span class="n">vector</span>
+
+<span class="n">vector</span><span class="p">[:</span><span class="mi">10</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mf">0.46234499</span><span class="p">,</span>  <span class="mf">0.81979895</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.83246968</span><span class="p">,</span>  <span class="mf">1.26062</span>   <span class="p">,</span>  <span class="mf">0.389594</span>  <span class="p">,</span>
+<span class="o">&gt;&gt;&gt;</span>        <span class="o">-</span><span class="mf">0.428568</span>  <span class="p">,</span>  <span class="mf">0.24449199</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.57974999</span><span class="p">,</span>  <span class="mf">0.15832401</span><span class="p">,</span>  <span class="mf">9.83159995</span><span class="p">])</span>
+</code></pre></div></div>
+
+<div dir="rtl">
+يمكنك ان تلاحظ هنا ان كل كلمة سوف يتم تمثيلها بمتجه يعبر عنها، ولان المتجهات الموجودة بالفعل في النموذج كثيرة وقد تكون اكثر من الكلمات التي تتدرب عليها في البرنامج الخاص بك، اذا قام المستخدم بإدخال كلمة جديدة لم يراها النموذج الخاص بك اثناء التدريب ولكن لها متجه معرف بالفعل فان النموذج الخاص بك سوف يحصل على متجه شبيه بالمتجهات التي حصل عليها اثناء تدريبه لان متجه هذه الكلمة لن يكون جديد كليا، دعنا نستعرض مثال على هذه الحالة تحديا.
+</div>
+
+<div dir="rtl">
+دعنا نقول ان اثناء التدريب نوذجك تعرض لكلمة يحب ولكنه لم يتعرض لكلمة يعشق، وعند استخدام النوذج الخاص بك ادخل المستخدم كلمة يعشق، في الحالة العادية سوف يقوم النموذج بتجاهلها ولكن في هذه الحالة (لو كان لها متجه معرف في نموذج المتجهات الذي هو مختلف عن نموذجك الخاص) حين إذ سوف تحصل منها على متجه يشبه كثيرا المتجه الخاص بكلمة (يحب) وهكذا يمكن للنموذج الخاص بك ان يفهم انها ليست كلمة جديدة كليا وانما كملة شبيهة بكلمة تعرض لها مسبقا.
+</div>
+
+<h3 class="text-right" id="بعض-الملاحظات-على-تمثيل-النص-بشكل-متجهات-الكلمات-word2vecglove">بعض الملاحظات على تمثيل النص بشكل متجهات الكلمات (word2vec/glove)</h3>
+
+<div dir="rtl">
+لاحظ هنا ان جودة تلك المتجهات تتوقف على جودة النموذج الذي استخدم في تكوينهم، اذ انه اذا كان ضعيفا ولم يتم توفير بيانات كافيه له فلن تحصل على متجهات فعالة وجيدة و انما متجهات غير معبرة لان في اغلب الاحيان لن يرى الكلمة اكثر من مرة في اكثر من موضع حتى يفهم المحتوى الذي تظهر به ليجد شبيهاتها من الكلمات.
+</div>
+
+<div dir="rtl">
+لاحظ ايضا كيف ان المتجه الخاص بالكلمة لا يختلف بإختلاف مكان استخدامها، على سبيل المثال (صليت المغرب في المغرب) كما تلاحظ هنا ان (المغرب) الاولى تعني صلاة المغرب اما الثانية فتعني البلد، في حالة استخدامنا لنموذج مبنى بطريقة (word2vec) او طريقة (GloVe) -وهما الطريقتان المستخدمان في المتجهات التي قمنا بعرضها- سوف تحصل على نفس المتجه وهذا بالتأكيد ليس الحل الأمثل.
+</div>
+
+<div dir="rtl">
+ايضا جمع المتجهات مكننا من تحصيل المعلومات الكامنة في النص بإكمله ولكن بالتأكيد لايغني عن حاجتنا لان نأخذ في اعتبارنا ترتيب النص، لان حتى بعد ان نقوم بجمع المتجهات، لن تختلف النتيجة بإختلاف ترتيب النص فمازلنا في حاجة إلى حل تلك المشكلة.
+</div>
+
+<h2 class="text-right" id="الاستنتاج">الاستنتاج</h2>
+
+<div dir="rtl">
+حتى الآن قمنا بتغطية العديد من الطرق لتمثيل النص وكيفية استخدامهم بلغة البايثون لعمل تطبيق بسيط للغاية، واستعرضنا اهم العقبات والمشاكل التي تواجه هذه الطرق و هكذا كيف ان هناك طرق اخرى لحل هذه المشاكل وهذا نهاية النصف الاول من هذه المقدمة المختصرة البسيطة عن معالجة الآلة باستخدام خوارزميات تعليم الآلة.
+</div>
+
+<div dir="rtl">
+في الجزء القادم سوف نتحدث عن نماذج اخرى افضل في معالجة النصوص و كيفية معالجتها للمشاكل التي تعرضنا لها حتى الآن وايضا سنتحدث عن النماذج المستخدمة حاليا في التقنيات الحديثة التي نراها في تطبيقاتنا بشكل يومي.
+</div>
+
+<div dir="rtl" class="notice--success">
+في هذا المقال حاولت تبسيط بعض المصطلحات للغتنا العربية من اجل تسهيل عملية الشرح ولتبسيط المعلومة، في حالة اي خطأ املائي او اقتراح افضل للترجمة فأنا ارحب جدا بذلك يمكنك التعليق على المقال او مراسلتي لتعديل و تحسين المحتوى، ووفقنا الله وإياكم لما يحب ويرضى.
+</div>
+
+<h2 class="text-right" id="مصادر">مصادر</h2>
+
+<div dir="rtl">
+<ul>
+<li><a href="https://www.coursera.org/learn/language-processing">كورس معالجة اللغة من جامعة HSE</a></li>
+<li><a href="https://papers.nips.cc/paper/5021-distributed-representations-of-words-and-phrases-and-their-compositionality.pdf">الورقة البحثية الخاصة بنموذج word2vec</a></li>
+<li><a href="http://jalammar.github.io/illustrated-word2vec/">شرح توضيحي رائع لطريقة عمل word2vec</a></li>
+<li><a href="https://nlp.stanford.edu/pubs/glove.pdf">الورقة البحثية الخاصة بنموذج glove</a></li>
+</ul>
+</div>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#arabic" class="page__taxonomy-item" rel="tag">arabic</a><span class="sep">, </span>
+    
+      <a href="/tags/#machine-learning" class="page__taxonomy-item" rel="tag">machine learning</a><span class="sep">, </span>
+    
+      <a href="/tags/#natural-language-processing" class="page__taxonomy-item" rel="tag">natural language processing</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#blog" class="page__taxonomy-item" rel="tag">Blog</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2020-06-24T00:00:00+00:00">June 24, 2020</time></p>
+
+
+      </footer>
+
+      <section class="page__share">
+  
+
+  <a href="https://twitter.com/intent/tweet?text=Introduction+to+NLP+in+Arabic+-+part+1%20%2Fblog%2Fintro-to-nlp-p1%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=%2Fblog%2Fintro-to-nlp-p1%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=%2Fblog%2Fintro-to-nlp-p1%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/blog/gradient-descent-family/" class="pagination--pager" title="النزول التدريجي و بعض مشتقاته و استخدامهم في علم الآلة
+">Previous</a>
+    
+    
+      <a href="/blog/permutations-and-combinations/" class="pagination--pager" title="Permutations and Combinations in Arabic
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+      <div class="page__comments">
+  
+  
+      <h4 class="page__comments-title">Comments</h4>
+      <section class="fb-comments" data-href="/blog/intro-to-nlp-p1/" data-mobile="true" data-num-posts="5" data-width="100%" data-colorscheme="light"></section>
+    
+</div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">You May Also Enjoy</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://unsplash.com/photos/LBKxu77KpSY/download?force=true" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/blog/intro-to-nlp-p2/" rel="permalink">Introduction to NLP in Arabic - part 2
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          14 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">نظرة عامة في مجال معالجة اللغة باستخدام خوارزميات تعلم الآلة الجزء الثاني
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://unsplash.com/photos/Oal07Ai4oTk/download?force=true" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/blog/permutations-and-combinations/" rel="permalink">Permutations and Combinations in Arabic
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          10 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">التباديل و التوافيق كما لم تراها في المدرسة
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://images.unsplash.com/photo-1454496522488-7a8e488e8606?ixlib=rb-1.2.1&auto=format&fit=crop&w=1355&q=80" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/blog/gradient-descent-family/" rel="permalink">النزول التدريجي و بعض مشتقاته و استخدامهم في علم الآلة
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          13 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">في هذا المقال نتعرض لبعض خصائص النزول التدريجي و مشاكله و كيفية حلها باستخدام مشتقاته
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://images.unsplash.com/photo-1527430253228-e93688616381?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1491&q=80" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/blog/intro-to-ml/" rel="permalink">مقدمة في علم الآلة
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          12 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">في هذا المقال البسيط سوف نتعرض بشئ من التفصيل عن ماهية تعليم الآلة ما المقصود بها تحديدا و كيف تتعلم الآلة مع التطرق لبعض التفاصيل الرياضية لهذه العملية
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+
+    
+      
+        
+          <li><a href="https://www.linkedin.com/in/aliabdelaal/" rel="nofollow noopener noreferrer"><i class="fab fa-linkedin" aria-hidden="true"></i> LinkedIn</a></li>
+        
+      
+        
+          <li><a href="https://github.com/aliabdelaal" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2023 Ali's Workspace. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-166658954-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-166658954-1', { 'anonymize_ip': false});
+</script>
+
+
+
+
+
+
+    <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+  
+
+
+
+
+
+  </body>
+</html>

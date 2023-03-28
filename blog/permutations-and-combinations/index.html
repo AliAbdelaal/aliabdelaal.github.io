@@ -1,0 +1,949 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Permutations and Combinations in Arabic - Ali’s Workspace</title>
+<meta name="description" content="التباديل و التوافيق كما لم تراها في المدرسة">
+
+
+  <meta name="author" content="Ali Abdelaal">
+  
+  <meta property="article:author" content="Ali Abdelaal">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Ali's Workspace">
+<meta property="og:title" content="Permutations and Combinations in Arabic">
+<meta property="og:url" content="/blog/permutations-and-combinations/">
+
+
+  <meta property="og:description" content="التباديل و التوافيق كما لم تراها في المدرسة">
+
+
+
+  <meta property="og:image" content="https://unsplash.com/photos/Oal07Ai4oTk/download?force=true">
+
+
+
+
+
+  <meta property="article:published_time" content="2020-08-16T00:00:00+00:00">
+
+
+
+
+
+
+<link rel="canonical" href="/blog/permutations-and-combinations/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": null,
+      "url": "/"
+    
+  }
+</script>
+
+
+  <meta name="google-site-verification" content="SB7EBK1J2IC4oNTmK8HHhFbkw9-m759bj5AAsdqCtkY" />
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Ali's Workspace Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML"></script>
+  
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Ali's Workspace
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/posts/">Blogs</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">Tags</a>
+            </li><li class="masthead__menu-item">
+              <a href="/about/">About</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+  
+
+
+
+
+
+
+
+<div class="page__hero--overlay"
+  style=" background-image: url('https://unsplash.com/photos/Oal07Ai4oTk/download?force=true');"
+>
+  
+    <div class="wrapper">
+      <h1 id="page-title" class="page__title" itemprop="headline">
+        
+          Permutations and Combinations in Arabic
+
+        
+      </h1>
+      
+        <p class="page__lead">التباديل و التوافيق كما لم تراها في المدرسة
+</p>
+      
+      
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          10 minute read
+        
+      </span>
+    
+  </p>
+
+
+      
+      
+    </div>
+  
+  
+    <span class="page__hero-caption">Photo credit: <a href="https://unsplash.com"><strong>Unsplash</strong></a>
+</span>
+  
+</div>
+
+
+
+
+
+<div id="main" role="main">
+  
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Permutations and Combinations in Arabic">
+    <meta itemprop="description" content="التباديل و التوافيق كما لم تراها في المدرسة">
+    <meta itemprop="datePublished" content="2020-08-16T00:00:00+00:00">
+    
+
+    <div class="page__inner-wrap">
+      
+
+      <section class="page__content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> المحتويات</h4></header>
+              <ul class="toc__menu"><li><a href="#مقدمة">مقدمة</a></li><li><a href="#العدّ">العدّ</a></li><li><a href="#المجموعات">المجموعات</a></li><li><a href="#قاعدة-الضرب">قاعدة الضرب</a></li><li><a href="#كم-كلمة-سر-يمكن-تكوينها-باستخدام-القفل">كم كلمة سر يمكن تكوينها باستخدام القفل</a></li><li><a href="#مجموعات-بشروط">مجموعات بشروط</a></li><li><a href="#التباديل-permutations">التباديل Permutations</a></li><li><a href="#التوافيق-combinations">التوافيق Combinations</a></li><li><a href="#كيفية-استخدام-التباديل-و-التوافيق-في-لغة-البايثون">كيفية استخدام التباديل و التوافيق في لغة البايثون</a></li><li><a href="#خاتمة">خاتمة</a></li><li><a href="#مصادر">مصادر</a></li></ul>
+
+            </nav>
+          </aside>
+        
+        <script src="https://formspree.io/js/formbutton-v1.min.js" defer=""></script>
+
+<script>
+   window.formbutton=window.formbutton||function(){(formbutton.q=formbutton.q||[]).push(arguments)};
+   formbutton("create", {
+     title: "Hello there 👋",
+     description: "Subscribe for my new content, or drop a message 🥳",
+     action: "https://formspree.io/xbjzaerk",
+     theme: "classic",
+     fields: [{
+      name: "name",
+      type: "text",
+      label: "Your Name",
+      required: true,
+      placeholder: "Say your name 🤔"
+    },
+    {
+      name: "email",
+      type: "email",
+      label: "Your Email",
+      placeholder: "Enter your em@il 📬",
+      required: true
+    },
+    {
+      name: "Message",
+      type: "textarea",
+      placeholder: "drop a message ! 🤓 if you want to 🤷‍♂️"
+    },
+    {
+      type: "submit"
+    }],
+     })
+</script>
+
+<h2 class="text-right" id="مقدمة">مقدمة</h2>
+
+<div dir="rtl">
+اغلبنا يتذكر مصطلح التباديل و التوافيق من المدرسة، غالبا نتذكر الاسم فقط و ننسى ما الفارق بينهم او غالبا ننساهم بالكلية، في هذا المقال سوف نقوم بتبسيط المعلومة حتى تصبح سهلة الاسترجاع فلا نضطر لحفظ المعادلات بعد الان لنعلم على سبيل المثال ما عدد كلمات المرور الممكنة في القفل الموجود بالصورة.
+</div>
+
+<p><img src="/assets/images/permutations-and-combinations/lock.png" alt="lock" class="align-center" /></p>
+<center><a href="https://unsplash.com/">المصدر</a></center>
+
+<h2 class="text-right" id="العدّ">العدّ</h2>
+
+<div dir="rtl">
+العدّ هو اساس العمليات الحسابية، و هو ببساطة اننا نريد معرفة عدد معين من الاشياء دون ان نضطر ان نقوم بعدّهم واحد بواحد، و هذه العملية مهمة في كثير من التطبيقات العملية، ابسطها معرفة عدد الخطوات التي يحتاجها برنامج معين حتى يقوم بعمل مهمة ما، وكذلك لحساب المساحة التي يمكن ان تشغلها عملية معينة قبل تنفيذها.
+</div>
+
+<div dir="rtl">
+فعلى سبيل المثال في هذه الصورة التي امامك هل يمكنك معرفة كم عدد الكرات دون ان تقوم بعّدهم واحدة تلو الاخرى ؟
+</div>
+
+<p><img src="/assets/images/permutations-and-combinations/counting.png" alt="counting" class="align-center" /></p>
+
+<div dir="rtl">
+بالتأكيد يمكنك ذلك عن طريق حساب عدد الصفوف و الاعمدة ثم حساب حاصل ضربهم ليكون الناتج هو عدد الكرات، وهكذا يكون ابسط مثال للعّد بدون الحاجة لعّد الامثلة واحدة تلو الاخرى ولكن هذه العملية لن تفلح في جميع الحالات، دعنا نرى كيف.
+</div>
+
+<div dir="rtl">
+فلنفرض على سبيل المثال في موقعك الالكتروني لديك مجموعة فيديوهات و فئات مختلفة، مثل كوميديا، اكشن وهكذا، و لنقل ان الموقع يحتوي على 5 فيديوهات في فئة ما و 7 في فئة اخرى، فهل هذا يعني ان هناك 12 مقطع فيديو على موقعك ؟
+</div>
+
+<div dir="rtl">
+ليس بالضرورة بالتأكيد لان الفيديو قد يقع في فئتين في نفس الوقت، مثل ان يكون كوميدي و اكشن مثلا، اذا لا يمكننا هنا ان نقوم بضرب عدد الفئات في الافلام كما فعلنا في مثال الكرات بالسابق ولكن نحتاج إلى حساب عدد الفيديوهات الموجودة فقط في الفئة الاولى و كذلك الفئة الثانية و نزيل الفيديوهات المكررة حتى لا نعدّها مرتين لعمل هذا نحتاج الى استخدام المجموعات، هل تتذكرها ؟
+</div>
+
+<h2 class="text-right" id="المجموعات">المجموعات</h2>
+
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Venn_0000_0001.svg/320px-Venn_0000_0001.svg.png?1597616693654" alt="sets" class="align-center" /></p>
+<center><a href="https://www.wikiwand.com/en/Intersection_(set_theory)">المصدر</a></center>
+
+<div dir="rtl">
+المجموعات هي عبارة عن مجموعة ارقام (او غير ارقام ولكن تركيزنا سيكون على الارقام)، لا يهم ترتيبهم ولا تكررارهم لان المجموعة هي الارقام المميزة فيمكننا القول بأن
+</div>
+
+\[\left \{1,1,1,2,3,3,4 \right \} = \left \{1,2,3,4 \right \}\]
+
+<div dir="rtl">
+هذا لان التكرار لا يهمنا هنا، وبالتالي يمكننا حساب تقاطع و اتحاد المجموعات، فان الاتحاد هو كل الارقام الموجودة في المجموعتين و التقاطع هي الارقام المشتركة كما تتذكر و يرمز لهم كما يلي.
+</div>
+
+\[A = \left \{1, 2, 3, 4, 5 \right \}\]
+
+\[B = \left \{1, 3, 5, 7 \right \}\]
+
+\[A \cap B = \left \{1, 3, 5 \right \} \rightarrow 1\]
+
+\[A \cup B = \left \{1, 2, 3, 4, 5, 7 \right \} \rightarrow 2\]
+
+<div dir="rtl">
+نرى في المعادلة الاولى تقاطع المجموعتين و في المعادلة الثانية اتحادهما، يمكننا ايضا التعبير عن عدد العناصر في المجموعة كما يلي
+</div>
+
+\[A = \left \{1, 4, 6 \right \}\]
+
+\[\left | A \right |  = 3\]
+
+<div dir="rtl">
+اذا بالعودة إلى مثال الافلام في موقعك الذي تحدثنا عنه من قبل يمكننا صياغة المجموع بأنه مجموع الافلام في المجموعة الاولى و المجموعة الثانية طرح تقاطعهما كما في المعادلة الآتية
+</div>
+
+\[\left | A \cup  B  \right | = \left | A \right | + \left | B \right | - \left | A \cap B  \right |\]
+
+<div dir="rtl">
+و يمكننا استخدام هذا القانون في العدّ بصورة عامة اذ اننا نقوم بعدّ كل مجموعة ثم نقوم بطرح التقاطع الذي يمثل الارقام التي قمنا بحسابها بالفعل مرة في مجموعة من المجموعات.
+</div>
+
+<h2 class="text-right" id="قاعدة-الضرب">قاعدة الضرب</h2>
+
+<div dir="rtl">
+جميعنا نعلم قاعدة الضرب ولكن دعنا نتخيلها سويا، لنقل ان لدينا 3 طلاب و ان هناك 5 امتحانات، اذا كم درجة لدينا ؟
+</div>
+
+<p><img src="/assets/images/permutations-and-combinations/table.png" alt="table" class="align-center" /></p>
+
+<div dir="rtl">
+بالتأكيد النتيجة 15 لان هذا حاصل الضرب، لان لكل طالب هناك نتيجة في امتحان ما، اي ان مجموعة الطلاب المكونة من 3 كل طالب فيهم اصبح لديه مجموعة من الدرجات، و بالتالي اصبح لدينا ازواج من الطلاب و الدرجات كل زوج يمثل طالب ما و درجة امتحان ما، لهذا قمنا بحساب ضرب الطلاب و الدرجات!
+</div>
+
+<h2 class="text-right" id="كم-كلمة-سر-يمكن-تكوينها-باستخدام-القفل">كم كلمة سر يمكن تكوينها باستخدام القفل</h2>
+
+<p><img src="/assets/images/permutations-and-combinations/lock.png" alt="lock" class="align-center" /></p>
+<center><a href="https://unsplash.com/">المصدر</a></center>
+
+<div dir="rtl">
+باستخدام قاعدة الضرب كيف يمكننا حساب عدد كلمات السر التي يمكن تكوينها باستخدام هذا القفل ياترى؟، دعنا نرى كيف
+</div>
+
+<p><img src="/assets/images/permutations-and-combinations/comb-pass.png" alt="comb-lock" class="align-center" /></p>
+
+<div dir="rtl">
+كما ترى، يمكننا في كل خانة ان نختار رقم من 0 الى 9، اذا عشرة ارقام في الخانة الاولى و مثلهم في الخانة الثانية و الثالثة و بهذا نقوم بحساب حاصل ضرب 10 × 10 × 10 و نحصل بالتالي على 1000 كلمة مرور يمكن تمثيلها بهذا القفل.
+</div>
+
+<div dir="rtl">
+يمكن استخدام هذه الطريقة لحساب عدد العمليات التي يتطلبها برنامج لكسر كلمة مرورك على سبيل المثال، اذ انه يمكننا كما رأيت ان نستخدم هذه العملية بناءا على ما سبق و نقول انه يتطلب منك على اقصى تقدير 1000 عملية تخمين قبل ان تقوم بكسر شيفرة القفل بالأعلى هذا ان كان فقط يحتوي على ارقام، هل يمكنك التخمين الآن لماذا نستخدم ارقام و حروف ورموز ككلمة مرور ؟
+</div>
+
+<div dir="rtl">
+يمكننا استنتاج قاعدة بسيطة هنا يمكن استخدامها في مواضع كثيرة و هي ما هي الاشكال التي يمكن الحصول عليها من متسلسلة من عدة رموز بمعلومية الرموز المتاحة، على سبيل المثال، في التعداد الثنائي (Binary numbering system) المستخدم في الدوائر الالكترونية، كم رقم يمكنك الحصول عليه اذا كان لديك 8 اماكن، و كل مكان يمكن ان يحمل قيمة من اثنين اما 0 او 1
+</div>
+
+<p><img src="/assets/images/permutations-and-combinations/binary.png" alt="binary-comb" class="align-center" /></p>
+
+<div dir="rtl">
+و هنا يمكننا استخدام القاعدة و هي ان مجموع الارقام التي يمكننا الحصول عليها هي عدد الرموز الممكنة أُس عدد الاماكن المتاحة، بالتالي في مثالنا هنا سيكون محصلة الارقام المتاحة هي
+</div>
+
+\[2 \times 2 \times 2 \times 2 \times 2 \times 2 \times 2 \times 2 = 2^8 = 256\]
+
+<h2 class="text-right" id="مجموعات-بشروط">مجموعات بشروط</h2>
+
+<div dir="rtl">
+لننظر إلى مشكلة اخرى اكثر تعقديا ونرى كيف يمكن حلها باستخدام قاعدة الضرب و بدون الحاجة إلى عد جميع الاحتمالات
+</div>
+
+<div dir="rtl">
+من بين الارقام 0 و 9999، كم رقم يمكننا الحصول عليه يحتوي على الرقم 7 مرة واحدة فقط به مثل 1117 و ليس مثلا 1717 لابد من وجود 7 مرة واحدة فقط ؟
+</div>
+
+<p><img src="/assets/images/permutations-and-combinations/permute.gif" alt="7-permute" class="align-center" /></p>
+
+<div dir="rtl">
+لنحل هذه المسألة دعنا نفكر بها بنفس الطرق السابقة، في البداية يمكننا استخدام الرقم 7 في الخانة الاولى و هذا يعطي جميع الخانات الاخرى الاختيار بين اي رقم ماعدا ال 7 هكذا يصبح لدينا 9 اختيارات من 0 إلى 6 و 8 و 9، وبهذا يصبح مجموع الارقام الممكنة مع وجود 7 واحدة فقط في البداية هي
+</div>
+
+\[9 \times 9 \times 9 = 729\]
+
+<p><img src="/assets/images/permutations-and-combinations/permute-7-1.png" alt="permute-7-1" class="align-center" /></p>
+
+<div dir="rtl">
+اذا بهذا الشكل فقط يمكننا الحصول على 729 رقم، ولكن الرقم 7 يمكنه ان يكون في اي مكان من ال 4 اماكن، وفي جميع الحالات سيكون مجموع الارقام الممكنة هي 729، اذا فإن محصلة الارقام التي يمكننا الحصول عليها و تحتوي الرقم 7 مرة واحدة فقط هي.
+</div>
+
+\[729 \times 4 = 2916\]
+
+<h2 class="text-right" id="التباديل-permutations">التباديل Permutations</h2>
+
+<div dir="rtl">
+والآن لموضوعنا الرئيسي و هو التباديل، ولكن ما هي التباديل على اية حال؟، دعنا نرى مثال على التباديل لنفهم تعريفها بشكل افضل.
+</div>
+
+<div dir="rtl">
+فلنفرض ان اسمك هو "علي"، كم كلمة يمكننا كتابتها باستخدام حروف اسمك بدون استخدام نفس الحرف مرتين ؟
+<br />
+الكلمات على سبيل المثال "يلع" او "يعل" وهكذا، اذا كم كلمة يمكنك الحصول عليها ؟
+</div>
+
+<div dir="rtl">
+في هذا المثال اسمك يتكون من 3 احرف، اذا في اول حرف لديك حرية الاختيار بين ايا منهم، اذا اول حرف يحمل 3 احتملات {ع, ل, ي}، ثم نأتي للحرف الثاني، سيكون امامك احتمالين فقط من الحروف اذ ان الحرف الذي تم اختياره من قبل المكان الاول لا يمكن اختياره الان لذا لديك فقط اختيارين، وهذا يترك اختيار واحد فقط للمكان الاخير و هذا يعطينا عدد من الكلمات يساوي 3 × 2 × 1 و بهذا يمكننا الحصول على 6 كلمات باستخدام حروف اسمك، دعنا نرى المثال بصورة اوضح.
+</div>
+
+<div dir="rtl">
+لنقل ان في المكان الاول اخترنا الحرف "ي" اذا في المكان الثاني لدينا فقط الحروف {ع, ل} لنختار منهم، و اذا اخترنا الحرف "ع" على سبيل المثال سيتبقى للمكان الاخير حرف واحد فقط للاختيار و هو حرف "ل"
+</div>
+
+<div dir="rtl">
+يمكننا تعميم هذه الحالة كما يلي، في حالة ان لديك عدد رموز n للاختيار منهم (على سبيل المثال الحروف الابجدية مثلا) و نريد تكون مجموعة طولها k رمز (مثل ان تكون الكلمة من 3 احرف مثلا) فإن مجموع الكلمات التي يمكنك الحصول عليها هو
+</div>
+
+\[n \times (n-1) \times (n-2) ... (n-k+1) = \frac{n!}{(n-k)!}\]
+
+<div dir="rtl">
+لاحظ ان في حالة ان n=k سيكون المقام بصفر، ولكن نفرض ان مضروب 0 = 1 وبهذا اذا كانت n=k فان مجموع التباديل هو n!
+<br />
+لنرى مثال على هذا، اذا كان لديك 5 كتب، وتريد ان تعرف كم طريقة يمكنك ترتيبهم بها على ارفف مكتبتك، كم طريقة يمكنك ترتيبهم بها ؟
+</div>
+
+<p><img src="https://unsplash.com/photos/t6oZEgL0z18/download?force=true&amp;w=640" alt="book-shelf" class="align-center" /></p>
+<center><a href="https://unsplash.com/">المصدر</a></center>
+
+<div dir="rtl">
+لتوضيح المثال كما فعلنا من قبل، في اول مكان يمكننا الاختيار من الكتب كلها، في ثاني مكان سنختار من الكتب كلها ماعدا الذي قمنا بإختياره، وهكذا مع كل خطوة تقل اختياراتك حتى تنهي الكتب و بهذا يصبح عدد الطرق التي يمكنك ترتيب كتبك بها هي
+</div>
+
+\[n \times (n-1) \times (n-2) ...(n-n+1) = n! = 5! = 120\]
+
+<div dir="rtl">
+اذا يمكنك ترتيب الكتب ب 120 طريقة كما ترى
+</div>
+
+<h2 class="text-right" id="التوافيق-combinations">التوافيق Combinations</h2>
+
+<div dir="rtl">
+لنقل ان لدينا 5 كرات و نريد ان نعرف كم مجموعة يمكننا تكوينها باستخدام 3 كرات بدون تكرار ايا من المجموعات، دعنا نرى تفاصيل هذا العملية
+</div>
+
+<p><img src="/assets/images/permutations-and-combinations/combinations-1.png" alt="combinations-1" class="align-center" /></p>
+
+<div dir="rtl">
+هنا يمكنك تن ترى اننا قمنا بتثبيت الكرة الاولى و اخترنا على اساسها باقي الكرات، لنرى عندما نقوم بتثبيت الكرة الثانية ماذا سيحدث
+</div>
+
+<p><img src="/assets/images/permutations-and-combinations/combinations-2.png" alt="combinations-2" class="align-center" /></p>
+
+<div dir="rtl">
+يمكنك ان ترى هناك عدة مجموعات متكررة مثل {1, 2, 3} و ايضا {1, 2, 4} بالتالي اذا قمنا بعمل حساباتنا مثل التبادل سوف نجد ان هناك العديد من التكرار بها، ونحن نريد حساب فقط العمليات المميزة، اذا كيف يمكننا ذلك ؟
+</div>
+
+<div dir="rtl">
+في مثالنا السابق اردنا اختيار مجموعات مكونة من 3 كرات من اصل 5 كرات، و اذا قمنا بحساب مجموع عدد المجموعات التي يمكننا تكوينها بما في ذلك مرات التكرار سنجد ان مجموعهم هو
+</div>
+
+\[5 \times (5-1) \times (5-2) = \frac{5!}{(5-3)!} = 60\]
+
+<div dir="rtl">
+والان دعنا نحسب عدد مرات التكرار التي يمكن ان تظهر في مجموعاتنا، بما ان كل مجموعة تتكون من 3 كرات، اذا فيمكننا تحويلها لنفس نمط عدد الكلمات التي يمكنك تكوينها باستخدام حروف اسم "علي" هذا لان الكرات مثلا {1, 2, 3} يمكن ايضا ان تظهر بشكل {2, 1, 3} وبهذا يصبح لديك نفس المجموعة ولكن فقط ترتيبها مختلف، اذا يمكننا ان نحسب كم شكل يمكن تكوينه من كل مجموعة و نقوم بقسمة التباديل عليه و بالتالي سنحصل على المجموعات و لكن بدون المجموعات المكررة ونحصل على المعادلة الآتية لحساب التوافيق
+</div>
+
+\[\binom{n}{k} = \frac{n!}{k! (n-k)!}\]
+
+<div dir="rtl">
+لاحظ ان الاقواس تعني كم مجموعة مميزة طولها k يمكننا ان نحصل عليها من مجموعة مكونة من n عنصر.
+</div>
+
+<div dir="rtl">
+بتطبيق هذه العملية على مثالنا يمكننا ان نحصل على عدد المجموعات المميزة و هو كما يلي
+</div>
+
+\[\binom{5}{3} = \frac{5!}{3! (5-3)!} = 10\]
+
+<div dir="rtl">
+اذا يمكننا فقط الحصول على 10 مجموعات مميزة من الكرات الخمس اذا كان طول المجموعة 3
+</div>
+
+<h2 class="text-right" id="كيفية-استخدام-التباديل-و-التوافيق-في-لغة-البايثون">كيفية استخدام التباديل و التوافيق في لغة البايثون</h2>
+
+<div dir="rtl">
+الان دعنا نرى كيف يمكننا ان نستخدم هذه القواعد في لغة ال Python للحصول على تباديل و توافيق من مجموعة ارقام list على سبيل المثال
+</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">permutations</span>
+<span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="n">my_permutations</span> <span class="o">=</span> <span class="n">permutations</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">perm</span> <span class="ow">in</span> <span class="n">my_permutations</span><span class="p">:</span>
+  <span class="k">print</span><span class="p">(</span><span class="n">perm</span><span class="p">)</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="p">[(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span>
+<span class="o">&gt;&gt;&gt;</span>  <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span>
+<span class="o">&gt;&gt;&gt;</span>  <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span>
+<span class="o">&gt;&gt;&gt;</span>  <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span>
+<span class="o">&gt;&gt;&gt;</span>  <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span>
+<span class="o">&gt;&gt;&gt;</span>  <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="p">...</span>
+</code></pre></div></div>
+
+<div dir="rtl">
+يمكنك ايضا الحصول على جميع التباديل مرة واحدة بدون الحاجة لاستخدام for loop كما يلي
+</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">permutations</span>
+<span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="n">my_permutations</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">permutations</span><span class="p">(</span><span class="n">numbers</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">my_permutations</span><span class="p">))</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mi">120</span>
+</code></pre></div></div>
+
+<div dir="rtl">
+و الان لنرى كيف يمكننا ان نحصل على التوافيق بمثال الكرات الخمس الذي استخدمناه سابقا
+</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">combinations</span>
+<span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="c1"># 3 here represents K in our example
+</span><span class="n">my_combs</span> <span class="o">=</span> <span class="n">combinations</span><span class="p">(</span><span class="n">numbers</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">comb</span> <span class="ow">in</span> <span class="n">my_combs</span><span class="p">:</span>
+  <span class="k">print</span><span class="p">(</span><span class="n">comb</span><span class="p">)</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="p">[(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span>
+<span class="o">&gt;&gt;&gt;</span>  <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span>
+<span class="o">&gt;&gt;&gt;</span>  <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span>
+<span class="o">&gt;&gt;&gt;</span>  <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span>
+<span class="o">&gt;&gt;&gt;</span>  <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span>
+<span class="o">&gt;&gt;&gt;</span>  <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span>
+<span class="o">&gt;&gt;&gt;</span>  <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span>
+<span class="o">&gt;&gt;&gt;</span>  <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span>
+<span class="o">&gt;&gt;&gt;</span>  <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span>
+<span class="o">&gt;&gt;&gt;</span>  <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">)]</span>
+</code></pre></div></div>
+
+<div dir="rtl">
+على غرار المثال السابق يمكننا ايضا الحصول عليهم بشكل مباشر
+</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">combinations</span>
+<span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="c1"># 3 here represents K in our example
+</span><span class="n">my_combs</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">combinations</span><span class="p">(</span><span class="n">numbers</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">my_combs</span><span class="p">))</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mi">10</span>
+</code></pre></div></div>
+
+<h2 class="text-right" id="خاتمة">خاتمة</h2>
+
+<div dir="rtl">
+في هذا المقال تحدثنا عن التباديل و التوافيق و كيف يمكننا ان نسترجع الفارق بينهم وكيفية حسابهم دون الحاجة الى حفظ المعادلة لان ببساطة يمكنك استرجاع المعلومة و طريقة فهمك لها وبالتالي لا يوجد حاجة لحفظ المعادلات بعد الان هنا.
+<br />
+تحدثنا عن كيف ان العدّ هو ابسط ولكن من اهم العمليات في الرياضيات و استخداماته كثيرة جدا، و كيف ان التباديل هي جميع الاشكال التي يمكنك الحصول عليها من مجموعة رموز مع امكانية تبديلهم و التوافيق هي التباديل ولكن مع مراعاة عدم تكرار المجموعات بها.
+</div>
+
+<div dir="rtl" class="notice--success">
+في هذا المقال حاولت تبسيط بعض المصطلحات للغتنا العربية من اجل تسهيل عملية الشرح ولتبسيط المعلومة، في حالة اي خطأ املائي او اقتراح افضل للترجمة فأنا ارحب جدا بذلك يمكنك التعليق على المقال او مراسلتي لتعديل و تحسين المحتوى، ووفقنا الله وإياكم لما يحب ويرضى.
+</div>
+
+<h2 class="text-right" id="مصادر">مصادر</h2>
+
+<div dir="rtl">
+<ul>
+<li><a href="https://www.coursera.org/learn/discrete-math-and-analyzing-social-graphs/">Discrete Math and Analyzing Social Graphs course by National Research University Higher School of Economics</a></li>
+</ul>
+</div>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#arabic" class="page__taxonomy-item" rel="tag">arabic</a><span class="sep">, </span>
+    
+      <a href="/tags/#math" class="page__taxonomy-item" rel="tag">math</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#blog" class="page__taxonomy-item" rel="tag">Blog</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2020-08-16T00:00:00+00:00">August 16, 2020</time></p>
+
+
+      </footer>
+
+      <section class="page__share">
+  
+
+  <a href="https://twitter.com/intent/tweet?text=Permutations+and+Combinations+in+Arabic%20%2Fblog%2Fpermutations-and-combinations%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=%2Fblog%2Fpermutations-and-combinations%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=%2Fblog%2Fpermutations-and-combinations%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/blog/intro-to-nlp-p1/" class="pagination--pager" title="Introduction to NLP in Arabic - part 1
+">Previous</a>
+    
+    
+      <a href="/blog/intro-to-nlp-p2/" class="pagination--pager" title="Introduction to NLP in Arabic - part 2
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+      <div class="page__comments">
+  
+  
+      <h4 class="page__comments-title">Comments</h4>
+      <section class="fb-comments" data-href="/blog/permutations-and-combinations/" data-mobile="true" data-num-posts="5" data-width="100%" data-colorscheme="light"></section>
+    
+</div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">You May Also Enjoy</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://unsplash.com/photos/LBKxu77KpSY/download?force=true" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/blog/intro-to-nlp-p2/" rel="permalink">Introduction to NLP in Arabic - part 2
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          14 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">نظرة عامة في مجال معالجة اللغة باستخدام خوارزميات تعلم الآلة الجزء الثاني
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://unsplash.com/photos/6jlYDFfyuCQ/download?force=true" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/blog/intro-to-nlp-p1/" rel="permalink">Introduction to NLP in Arabic - part 1
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          18 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">نظرة عامة في مجال معالجة اللغة باستخدام خوارزميات تعلم الآلة
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://images.unsplash.com/photo-1454496522488-7a8e488e8606?ixlib=rb-1.2.1&auto=format&fit=crop&w=1355&q=80" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/blog/gradient-descent-family/" rel="permalink">النزول التدريجي و بعض مشتقاته و استخدامهم في علم الآلة
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          13 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">في هذا المقال نتعرض لبعض خصائص النزول التدريجي و مشاكله و كيفية حلها باستخدام مشتقاته
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://images.unsplash.com/photo-1527430253228-e93688616381?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1491&q=80" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/blog/intro-to-ml/" rel="permalink">مقدمة في علم الآلة
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          12 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">في هذا المقال البسيط سوف نتعرض بشئ من التفصيل عن ماهية تعليم الآلة ما المقصود بها تحديدا و كيف تتعلم الآلة مع التطرق لبعض التفاصيل الرياضية لهذه العملية
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+
+    
+      
+        
+          <li><a href="https://www.linkedin.com/in/aliabdelaal/" rel="nofollow noopener noreferrer"><i class="fab fa-linkedin" aria-hidden="true"></i> LinkedIn</a></li>
+        
+      
+        
+          <li><a href="https://github.com/aliabdelaal" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2023 Ali's Workspace. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-166658954-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-166658954-1', { 'anonymize_ip': false});
+</script>
+
+
+
+
+
+
+    <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+  
+
+
+
+
+
+  </body>
+</html>

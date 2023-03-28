@@ -1,0 +1,866 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Telegram bot tutorial using python and flask - Ali’s Workspace</title>
+<meta name="description" content="in this tutorial you will learn how to make a telegram bot and deploy it on a heroku server, the bot will be up 24-7.">
+
+
+  <meta name="author" content="Ali Abdelaal">
+  
+  <meta property="article:author" content="Ali Abdelaal">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Ali's Workspace">
+<meta property="og:title" content="Telegram bot tutorial using python and flask">
+<meta property="og:url" content="/blog/telegram-bot-tutorial/">
+
+
+  <meta property="og:description" content="in this tutorial you will learn how to make a telegram bot and deploy it on a heroku server, the bot will be up 24-7.">
+
+
+
+  <meta property="og:image" content="https://www.wikitechy.com/technology/wp-content/uploads/2017/05/Telegram-Bots.png">
+
+
+
+
+
+  <meta property="article:published_time" content="2020-05-12T00:00:00+00:00">
+
+
+
+
+
+
+<link rel="canonical" href="/blog/telegram-bot-tutorial/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": null,
+      "url": "/"
+    
+  }
+</script>
+
+
+  <meta name="google-site-verification" content="SB7EBK1J2IC4oNTmK8HHhFbkw9-m759bj5AAsdqCtkY" />
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Ali's Workspace Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML"></script>
+  
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Ali's Workspace
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/posts/">Blogs</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">Tags</a>
+            </li><li class="masthead__menu-item">
+              <a href="/about/">About</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Telegram bot tutorial using python and flask">
+    <meta itemprop="description" content="in this tutorial you will learn how to make a telegram bot and deploy it on a heroku server, the bot will be up 24-7.">
+    <meta itemprop="datePublished" content="2020-05-12T00:00:00+00:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">Telegram bot tutorial using python and flask
+</h1>
+          
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          6 minute read
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
+              <ul class="toc__menu"><li><a href="#before-we-start">Before we start</a></li><li><a href="#create-the-bot-on-telegram-first">Create the bot on telegram first</a></li><li><a href="#coding-the-bot-engine">Coding the bot engine</a></li><li><a href="#launch-our-app-on-heroku">Launch our app on heroku</a></li><li><a href="#now-go-talk-to-your-bot">Now go talk to your bot</a></li><li><a href="#the-complete-source-code">The complete source code</a></li><li><a href="#additional-reads">Additional reads</a></li></ul>
+
+            </nav>
+          </aside>
+        
+        <script src="https://formspree.io/js/formbutton-v1.min.js" defer=""></script>
+
+<script>
+   window.formbutton=window.formbutton||function(){(formbutton.q=formbutton.q||[]).push(arguments)};
+   formbutton("create", {
+     title: "Hello there 👋",
+     description: "Subscribe for my new content, or drop a message 🥳",
+     action: "https://formspree.io/xbjzaerk",
+     theme: "classic",
+     fields: [{
+      name: "name",
+      type: "text",
+      label: "Your Name",
+      required: true,
+      placeholder: "Say your name 🤔"
+    },
+    {
+      name: "email",
+      type: "email",
+      label: "Your Email",
+      placeholder: "Enter your em@il 📬",
+      required: true
+    },
+    {
+      name: "Message",
+      type: "textarea",
+      placeholder: "drop a message ! 🤓 if you want to 🤷‍♂️"
+    },
+    {
+      type: "submit"
+    }],
+     })
+</script>
+
+<p><img src="https://www.wikitechy.com/technology/wp-content/uploads/2017/05/Telegram-Bots.png" alt="img" /></p>
+
+<p><a href="https://www.wikitechy.com/technology/wp-content/uploads/2017/05/Telegram-Bots.png">img source</a></p>
+
+<p>in this tutorial you will learn how to make a telegram bot and deploy it on a heroku server, the bot will be up 24-7, and you can inject your own brain and responses into it.</p>
+
+<h2 id="before-we-start">Before we start</h2>
+
+<p>you will need to have the following</p>
+
+<ul>
+  <li>a <a href="https://signup.heroku.com/">heroku</a> free account</li>
+  <li>a <a href="https://telegram.org/">telegram</a> account of course</li>
+</ul>
+
+<h2 id="create-the-bot-on-telegram-first">Create the bot on telegram first</h2>
+
+<p><img src="/assets/images/telegram-bot-tutorial/createbot.png" alt="bot-creating-in-telegram" /></p>
+
+<p>before we dive into coding, let’s finish the easy stuff, we need to ask telegram to create a new bot on the platform, it’s a fairly simple process, you can do so in your telegram app(on <a href="https://telegram.org/apps">windows/linux/android/ios/web</a>) you need to go to <a href="https://telegram.me/botfather">botfather</a> which is basically a bot himself that automate the process of creating your bot.</p>
+
+<p>you will need to ask him using the <code class="language-plaintext highlighter-rouge">/</code> prefix to start a command, once you start typing it will autocomplete itself, the command you need is <code class="language-plaintext highlighter-rouge">/newbot</code>, which will take you to the flow of creating your bot, the bot will prompt you for a name and username for the bot (the username has to be unique), then it will respone with a message like so</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Done! Congratulations on your new bot. You will find it at t.me/{bot-username}. You can now add a description, about section and profile picture for your bot, see /help for a list of commands. By the way, when you've finished creating your cool bot, ping our Bot Support if you want a better username for it. Just make sure the bot is fully operational before you do this.
+
+Use this token to access the HTTP API:
+{the-bot-token-which-we-will-use-later}
+Keep your token secure and store it safely, it can be used by anyone to control your bot.
+
+For a description of the Bot API, see this page: https://core.telegram.org/bots/api
+</code></pre></div></div>
+
+<p>congratulations you now have your bot on the platform!</p>
+
+<h2 id="coding-the-bot-engine">Coding the bot engine</h2>
+
+<p>before we start please note the following</p>
+
+<ul>
+  <li>i assume you use python3</li>
+  <li>also my environment is ubuntu 18, it’s unlikely that this will affect your project thought.</li>
+</ul>
+
+<p>now let’s dive into some code, let’s start of by creating a <a href="https://docs.python.org/3/library/venv.html">virtualenv</a> for our project, in your terminal type</p>
+
+<pre><code class="language-cmd">$python -m venv venv/
+</code></pre>
+
+<p>now you will have a <code class="language-plaintext highlighter-rouge">venv/</code> directory which will have all the python libraries we will be using, go ahead and activate the <code class="language-plaintext highlighter-rouge">virtualenv</code> using the following command</p>
+
+<pre><code class="language-cmd">$source venv/bin/activate
+</code></pre>
+
+<p>now let’s have some libs installed</p>
+
+<pre><code class="language-cmd">(venv) $pip install flask python-telegram-bot requests gunicorn
+</code></pre>
+
+<p>that’s all we need for now, let’s structure our project in a neat way before we start the real coding</p>
+
+<pre><code class="language-cmd">.
+├── app.py
+├── telebot
+│   ├── credentials.py
+│   ├── mastermind.py
+│   |   .
+│   |   you can build your engine here
+│   |   .
+│   └── __init__.py
+└── venv
+</code></pre>
+
+<p>in the <code class="language-plaintext highlighter-rouge">credentials.py</code> file we will need three variables</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">bot_token</span> <span class="o">=</span> <span class="s">"place your token here"</span>
+<span class="n">bot_user_name</span> <span class="o">=</span> <span class="s">"bot username"</span>
+<span class="n">URL</span> <span class="o">=</span> <span class="s">"the heroku app link that we will create later"</span>
+</code></pre></div></div>
+
+<p>in <code class="language-plaintext highlighter-rouge">mastermind.py</code> you could use your super AI to generate response</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">get_response</span><span class="p">(</span><span class="n">msg</span><span class="p">):</span>
+    <span class="s">"""
+    you can place your mastermind AI here
+    could be a very basic simple response like "معلش"
+    or a complex LSTM network that generate appropriate answer
+
+    """</span>
+    <span class="k">return</span> <span class="s">"معلش !"</span>
+</code></pre></div></div>
+
+<p>now let’s go back to our <code class="language-plaintext highlighter-rouge">app.py</code> and go throw the code step by step</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># import everything
+</span><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span><span class="p">,</span> <span class="n">request</span>
+<span class="kn">import</span> <span class="nn">telegram</span>
+<span class="kn">from</span> <span class="nn">telebot.credentials</span> <span class="kn">import</span> <span class="n">bot_token</span><span class="p">,</span> <span class="n">bot_user_name</span><span class="p">,</span><span class="n">URL</span>
+<span class="kn">from</span> <span class="nn">telebot.mastermind</span> <span class="kn">import</span> <span class="n">get_response</span>
+</code></pre></div></div>
+
+<p>now let’s create global objects for the bot and the token</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">global</span> <span class="n">bot</span>
+<span class="k">global</span> <span class="n">TOKEN</span>
+<span class="n">TOKEN</span> <span class="o">=</span> <span class="n">bot_token</span>
+<span class="n">bot</span> <span class="o">=</span> <span class="n">telegram</span><span class="p">.</span><span class="n">Bot</span><span class="p">(</span><span class="n">token</span><span class="o">=</span><span class="n">TOKEN</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>at this point we have the <code class="language-plaintext highlighter-rouge">bot</code> object which is connected to your actuall bot using the token you have copied from the botfather message we saw earlier.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># start the flask app
+</span><span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>now we need to bind functions to specific routes, in other words, we need to tell flask what to do when a specific address is called, more info about flask and route can be found <a href="http://flask.pocoo.org/docs/1.0/quickstart/">here</a></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">"""
+here the route function respond to a url which is basically /{token} which is the url telegram will call to get responses for the messages sent to him.
+"""</span>
+<span class="o">@</span><span class="n">app</span><span class="p">.</span><span class="n">route</span><span class="p">(</span><span class="s">'/{}'</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="n">TOKEN</span><span class="p">),</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s">'POST'</span><span class="p">])</span>
+<span class="k">def</span> <span class="nf">respond</span><span class="p">():</span>
+    <span class="c1"># retrieve the message in JSON and then transform it to Telegram object
+</span>    <span class="n">update</span> <span class="o">=</span> <span class="n">telegram</span><span class="p">.</span><span class="n">Update</span><span class="p">.</span><span class="n">de_json</span><span class="p">(</span><span class="n">request</span><span class="p">.</span><span class="n">get_json</span><span class="p">(</span><span class="n">force</span><span class="o">=</span><span class="bp">True</span><span class="p">),</span> <span class="n">bot</span><span class="p">)</span>
+
+    <span class="c1"># get the chat_id to be able to respond to the same user
+</span>    <span class="n">chat_id</span> <span class="o">=</span> <span class="n">update</span><span class="p">.</span><span class="n">message</span><span class="p">.</span><span class="n">chat</span><span class="p">.</span><span class="nb">id</span>
+    <span class="c1"># get the message id to be able to reply to this specific message
+</span>    <span class="n">msg_id</span> <span class="o">=</span> <span class="n">update</span><span class="p">.</span><span class="n">message</span><span class="p">.</span><span class="n">message_id</span>
+
+    <span class="c1"># Telegram understands UTF-8, so encode text for unicode compatibility
+</span>    <span class="n">text</span> <span class="o">=</span> <span class="n">update</span><span class="p">.</span><span class="n">message</span><span class="p">.</span><span class="n">text</span><span class="p">.</span><span class="n">encode</span><span class="p">(</span><span class="s">'utf-8'</span><span class="p">).</span><span class="n">decode</span><span class="p">()</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"got text message :"</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+
+    <span class="c1"># here we call our super AI
+</span>    <span class="n">response</span> <span class="o">=</span> <span class="n">get_response</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+
+    <span class="c1"># now just send the message back
+</span>    <span class="c1"># notice how we specify the chat and the msg we reply to
+</span>    <span class="n">bot</span><span class="p">.</span><span class="n">sendMessage</span><span class="p">(</span><span class="n">chat_id</span><span class="o">=</span><span class="n">chat_id</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="n">response</span><span class="p">,</span> <span class="n">reply_to_message_id</span><span class="o">=</span><span class="n">msg_id</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="s">'ok'</span>
+
+</code></pre></div></div>
+
+<p>that’s great but we need to tell telegram to call our app (the one we will create in a minute) so that our function can be invoked, for this we will use <a href="https://www.wikiwand.com/en/Webhook">webhook</a> which is in a very basic words, a way to let the bot call our server whenever a message is called, so that we dont need to make our server suffer in a while loop waiting for a message to come.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># the route here can be anything, you the one who will call it
+</span><span class="o">@</span><span class="n">app</span><span class="p">.</span><span class="n">route</span><span class="p">(</span><span class="s">'/setwebhook'</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s">'GET'</span><span class="p">,</span> <span class="s">'POST'</span><span class="p">])</span>
+<span class="k">def</span> <span class="nf">set_webhook</span><span class="p">():</span>
+    <span class="c1"># we use the bot object to link the bot to our app which live
+</span>    <span class="c1"># in the link provided by URL
+</span>    <span class="n">s</span> <span class="o">=</span> <span class="n">bot</span><span class="p">.</span><span class="n">setWebhook</span><span class="p">(</span><span class="s">'{URL}{HOOK}'</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="n">URL</span><span class="o">=</span><span class="n">URL</span><span class="p">,</span> <span class="n">HOOK</span><span class="o">=</span><span class="n">TOKEN</span><span class="p">))</span>
+    <span class="c1"># something to let us know things work
+</span>    <span class="k">if</span> <span class="n">s</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s">"webhook setup ok"</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s">"webhook setup failed"</span>
+</code></pre></div></div>
+
+<p>now everything is set, let’s just make a fancy home page so that we know the engine is up</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">@</span><span class="n">app</span><span class="p">.</span><span class="n">route</span><span class="p">(</span><span class="s">'/'</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">index</span><span class="p">():</span>
+    <span class="k">return</span> <span class="s">'.'</span>
+</code></pre></div></div>
+
+<p>an app can’t run without a main right</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">'__main__'</span><span class="p">:</span>
+    <span class="c1"># note the threaded arg which allow
+</span>    <span class="c1"># your app to have more than one thread
+</span>    <span class="n">app</span><span class="p">.</span><span class="n">run</span><span class="p">(</span><span class="n">threaded</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>that’s the last code you will write today, now to the last step, launching our app on heroku.</p>
+
+<h2 id="launch-our-app-on-heroku">Launch our app on heroku</h2>
+
+<p>we need a couple of things before we make our app.</p>
+
+<ul>
+  <li>
+    <p>heroku can’t know what libraries your project uses, so we have to tell him using the <code class="language-plaintext highlighter-rouge">requirements.txt</code> file (a common problem is that you misspell requirements so be careful :D), to generate the requirements file use pip</p>
+
+    <pre><code class="language-cmd">  $pip freeze &gt; requirements.txt
+</code></pre>
+
+    <p>now you have your requirements file ready to go</p>
+  </li>
+  <li>
+    <p>second you need the <code class="language-plaintext highlighter-rouge">Procfile</code> which tells heroku where our app starts, so create a <code class="language-plaintext highlighter-rouge">Procfile</code> file and in it type the following</p>
+
+    <pre><code class="language-cmd">  web: gunicorn app:app
+</code></pre>
+  </li>
+  <li>
+    <p><strong>A bounce step</strong>: you can add <a href="https://github.com/github/gitignore/blob/master/Python.gitignore">.gitignore</a> file to your project so that no-use files don’t get uploaded to the repository.</p>
+  </li>
+  <li>
+    <p>from your <a href="https://dashboard.heroku.com/apps">dashboard</a> on heroku create a new app, once you create an app it will direct you to the deploy page, open the <strong>settings</strong> tab in new window and copy the domain of the app which will be something like <code class="language-plaintext highlighter-rouge">https://appname.herokuapp.com/</code> and paste it in the URL variable inside our <code class="language-plaintext highlighter-rouge">credentials.py</code></p>
+  </li>
+</ul>
+
+<p><img src="/assets/images/telegram-bot-tutorial/heroku-url.png" alt="project-url" /></p>
+
+<p>now go back to the <strong>deploy</strong> tab and proceed with the steps:</p>
+<ul>
+  <li>
+    <p>login to heroku</p>
+
+    <pre><code class="language-cmd">$heroku login
+</code></pre>
+
+    <p>note that sometimes this method get stuck in <code class="language-plaintext highlighter-rouge">waiting for login</code>, if this is the case with you, you can login using</p>
+
+    <pre><code class="language-cmd">$heroku login -i
+</code></pre>
+  </li>
+  <li>
+    <p>Initialize a git repository in our directory</p>
+
+    <pre><code class="language-cmd">$git init
+$heroku git:remote -a {heroku-project-name}
+</code></pre>
+  </li>
+  <li>
+    <p>Deploy the app</p>
+
+    <pre><code class="language-cmd">$git add .
+$git commit -m "first commit"
+$git push heroku master
+</code></pre>
+  </li>
+  <li>
+    <p>at this point you will see the building progress in your terminal, if everything went okay you will see something like so</p>
+
+    <pre><code class="language-cmd">  remote: -----&gt; Launching...
+  remote:        Released v6
+  remote:        https://project-name.herokuapp.com/ deployed to Heroku
+  remote:
+  remote: Verifying deploy... done.
+</code></pre>
+  </li>
+  <li>
+    <p>Now go to the app page (the link of the domain you copied before) and add to the end of the link <code class="language-plaintext highlighter-rouge">/setwebhook</code> so that the address will be something like <code class="language-plaintext highlighter-rouge">https://appname.herokuapp.com/setwebhook</code>, if you see <code class="language-plaintext highlighter-rouge">webhook setup ok</code> then you are ready to go!</p>
+  </li>
+</ul>
+
+<h2 id="now-go-talk-to-your-bot">Now go talk to your bot</h2>
+
+<p><img src="/assets/images/telegram-bot-tutorial/bot.gif" alt="live bot" /></p>
+
+<h2 id="the-complete-source-code">The complete source code</h2>
+
+<p>You can find the source code on github <a href="https://github.com/AliAbdelaal/telegram-bot-tutorial">here</a></p>
+
+<h2 id="additional-reads">Additional reads</h2>
+
+<ul>
+  <li><a href="https://www.codementor.io/garethdwyer/building-a-telegram-bot-using-python-part-1-goi5fncay">Building a Chatbot using Telegram and Python</a></li>
+  <li><a href="https://medium.com/@xabaras/setting-your-telegram-bot-webhook-the-easy-way-c7577b2d6f72">Setting your Telegram Bot WebHook the easy way</a></li>
+  <li><a href="https://github.com/python-telegram-bot/python-telegram-bot">python-telegram-bot Repository</a></li>
+  <li><a href="https://devcenter.heroku.com/articles/git">Deploying with Git on Heruko</a></li>
+  <li><a href="https://python-telegram-bot.readthedocs.io/en/stable/index.html">Python Telegram Bot’s documentation</a></li>
+</ul>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#chatbot" class="page__taxonomy-item" rel="tag">chatbot</a><span class="sep">, </span>
+    
+      <a href="/tags/#python" class="page__taxonomy-item" rel="tag">python</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#blog" class="page__taxonomy-item" rel="tag">Blog</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2020-05-12T00:00:00+00:00">May 12, 2020</time></p>
+
+
+      </footer>
+
+      <section class="page__share">
+  
+
+  <a href="https://twitter.com/intent/tweet?text=Telegram+bot+tutorial+using+python+and+flask%20%2Fblog%2Ftelegram-bot-tutorial%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=%2Fblog%2Ftelegram-bot-tutorial%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=%2Fblog%2Ftelegram-bot-tutorial%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="#" class="pagination--pager disabled">Previous</a>
+    
+    
+      <a href="/blog/intro-to-ml/" class="pagination--pager" title="مقدمة في علم الآلة
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+      <div class="page__comments">
+  
+  
+      <h4 class="page__comments-title">Comments</h4>
+      <section class="fb-comments" data-href="/blog/telegram-bot-tutorial/" data-mobile="true" data-num-posts="5" data-width="100%" data-colorscheme="light"></section>
+    
+</div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">You May Also Enjoy</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://unsplash.com/photos/LBKxu77KpSY/download?force=true" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/blog/intro-to-nlp-p2/" rel="permalink">Introduction to NLP in Arabic - part 2
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          14 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">نظرة عامة في مجال معالجة اللغة باستخدام خوارزميات تعلم الآلة الجزء الثاني
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://unsplash.com/photos/Oal07Ai4oTk/download?force=true" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/blog/permutations-and-combinations/" rel="permalink">Permutations and Combinations in Arabic
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          10 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">التباديل و التوافيق كما لم تراها في المدرسة
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://unsplash.com/photos/6jlYDFfyuCQ/download?force=true" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/blog/intro-to-nlp-p1/" rel="permalink">Introduction to NLP in Arabic - part 1
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          19 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">نظرة عامة في مجال معالجة اللغة باستخدام خوارزميات تعلم الآلة
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://images.unsplash.com/photo-1454496522488-7a8e488e8606?ixlib=rb-1.2.1&auto=format&fit=crop&w=1355&q=80" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/blog/gradient-descent-family/" rel="permalink">النزول التدريجي و بعض مشتقاته و استخدامهم في علم الآلة
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          14 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">في هذا المقال نتعرض لبعض خصائص النزول التدريجي و مشاكله و كيفية حلها باستخدام مشتقاته
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+
+    
+      
+        
+          <li><a href="https://www.linkedin.com/in/aliabdelaal/" rel="nofollow noopener noreferrer"><i class="fab fa-linkedin" aria-hidden="true"></i> LinkedIn</a></li>
+        
+      
+        
+          <li><a href="https://github.com/aliabdelaal" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2023 Ali's Workspace. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-166658954-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-166658954-1', { 'anonymize_ip': false});
+</script>
+
+
+
+
+
+
+    <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+  
+
+
+
+
+
+  </body>
+</html>
